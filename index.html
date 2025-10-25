@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Franken UI -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/utilities.min.css"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Dharaneesh Dhupam</title>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+	background:white;
+	
+        
+      }
+
+      a.uk-link {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .profile-pic {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid #ddd;
+      }
+
+      footer {
+        border-top: 1px solid #e5e5e5;
+        padding: 1.25rem;
+        text-align: center;
+        color: #555;
+        margin-top: 2.5rem;
+      }
+
+      .max-w-site {
+        max-width: 900px;
+      }
+
+      section {
+        scroll-margin-top: 90px; /* header height offset */
+      }
+
+      /* Glassy navbar */
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      /* subtle shadow for contrast */
+      .glass-nav-shadow {
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+      }
+    </style>
+  </head>
+
+  <body >
+    <!-- Header -->
+    <header class="glass-nav glass-nav-shadow sticky top-0 z-50">
+      <div
+        class="max-w-site mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <h1 class="text-lg font-semibold">Dharaneesh Dhupam</h1>
+
+        <!-- desktop nav -->
+        <nav class="hidden md:flex gap-4 text-sm">
+          <a href="#about" class="uk-link">About</a>
+          <a href="#systemschange" class="uk-link">Systems Change</a>
+          <a href="#projects" class="uk-link">Projects</a>
+          <a href="#research" class="uk-link">Research</a>
+          <a href="#writing" class="uk-link">Writing</a>
+          <a href="#contact" class="uk-link">Contact</a>
+        </nav>
+
+        <!-- mobile toggle -->
+        <button id="menu-btn" class="md:hidden p-1" aria-label="Toggle menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-md border-t">
+        <div class="px-4 py-3 flex flex-col">
+          <a href="#about" class="py-2 uk-link">About</a>
+          <a href="#systemschange" class="py-2 uk-link">Systems Change</a>
+          <a href="#projects" class="py-2 uk-link">Projects</a>
+          <a href="#research" class="py-2 uk-link">Research</a>
+          <a href="#writing" class="py-2 uk-link">Writing</a>
+          <a href="#contact" class="py-2 uk-link">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-site mx-auto px-4 md:px-8 py-10">
+      <!-- About -->
+      <section id="about" class="mb-12">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <img src="DD.jpg" alt="Dharaneesh Dhupam" class="profile-pic" />
+
+          <div class="flex-1">
+            <p class="text-lg leading-relaxed">
+              I’m Dharaneesh Dhupam. I grew up in Tenali, a small town in Andhra Pradesh. I studied Electronics and Communication Engineering at IIITDM Kurnool (2020–2024) and also studied Economics, Sociology, and Public Administration (2022–2025). I wanted to understand both how systems are built and how they break.
+            </p>
+
+           
+          </div>
+        </div>
+      </section>
+
+ <p class="mt-4 leading-relaxed">
+              During college, I saw how simple processes like buying land could turn into long, confusing, and sometimes unfair experiences. That frustration turned into a question: can we build systems that people can actually trust? That question has been the thread through most of what I’ve built since then.
+            </p>
+
+            <p class="mt-4 leading-relaxed">
+              I’m now working on <a href="#systemschange" class="uk-link">Systems Change</a>, a platform that tries to make property transactions simple, verifiable, and fraud-proof. I like working on things that feel useful in the real world.
+            </p>
+
+            <p class="mt-4 mb-8">
+              <a href="/DD Resume 2025 OCT.pdf" class="uk-link" target="_blank">View resume</a>
+            </p>
+      <!-- Systems Change -->
+      <section id="systemschange" class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Systems Change, Inc.</h2>
+
+        <p class="leading-relaxed">
+          Own property faster, smarter, safer. You find a property, sign, and we take care of the rest. The idea is to make buying or selling land as straightforward as possible.
+        </p>
+
+        <p class="mt-3">
+          Live at <a href="https://sysc.land" target="_blank" class="uk-link">sysc.land</a>
+        </p>
+
+        <h3 class="mt-6 font-semibold">How it works</h3>
+        <ol class="list-decimal pl-6 mt-2 space-y-2">
+          <li>Discover and verify properties with transparent records.</li>
+          <li>Approve with a digital signature. No paperwork.</li>
+          <li>We handle the filings and send you the final documents.</li>
+        </ol>
+
+        <h3 class="mt-6 font-semibold">Why this matters</h3>
+        <ul class="list-disc pl-6 mt-2 space-y-2">
+          <li>Security with post-quantum digital signatures (ML-DSA).</li>
+          <li>Immutable and decentralized ownership history.</li>
+          <li>Fast and clear process that cuts out confusion.</li>
+        </ul>
+
+        <blockquote class="mt-6 border-l-4 border-gray-300 pl-4 italic">
+          “Systems Change started as a college project about how to build a land registry that people can actually trust.”
+        </blockquote>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Projects</h2>
+
+        <ul class="list-disc pl-6 space-y-3">
+          <li>
+            <a href="https://seaofus.com" class="uk-link" target="_blank">SeaofUs.com</a> — a social blogging platform I built to learn web development. It includes AI features for writing and image creation, and focuses on simplicity.
+          </li>
+          <li>
+            Automated government data entry using pandas and Selenium, turning a few weeks of manual work into a few days.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Research -->
+      <section id="research" class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Research</h2>
+
+        <p class="leading-relaxed">
+          I’m interested in how to build systems that can be verified without having to trust a single authority. My work explores how cryptographic trust can work at scale without making systems too complex for real use.
+        </p>
+
+        <h3 class="mt-4 font-semibold">Some work</h3>
+        <ul class="list-disc pl-6 mt-2 space-y-2">
+          <li>
+            <a href="https://doi.org/10.31237/osf.io/nhwks_v1" class="uk-link" target="_blank">
+              Post-Quantum Cryptography based Land Records Management System
+            </a>
+          </li>
+          <li>
+            <a href="https://doi.org/10.36227/techrxiv.175234511.12096363/v2" class="uk-link" target="_blank">
+              PQC-VE: Verifiable Electronic Voting Framework
+            </a>
+          </li>
+          <li>
+            <a href="https://doi.org/10.31219/osf.io/9rmf5_v2" class="uk-link" target="_blank">
+              The Theory of Replaceability
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Writing -->
+      <section id="writing" class="mb-12">
+        <h2 class="text-2xl font-semibold mb-3">Writing</h2>
+
+        <p class="leading-relaxed">
+          I started writing before college, mostly screenplays and short essays. It wasn’t about career or projects, I just liked it. Writing helps me think clearly and notice how people and systems behave. It’s something I keep coming back to.
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="mb-8">
+        <h2 class="text-2xl font-semibold mb-3">Contact</h2>
+
+        <p class="leading-relaxed">
+          Email:
+          <a href="mailto:dharaneeshdhupam@gmail.com" class="uk-link">dharaneeshdhupam@gmail.com</a><br />
+          Alt:
+          <a href="mailto:dd@sysc.land" class="uk-link">dd@sysc.land</a>
+        </p>
+
+        <p class="mt-3">
+          <a href="https://github.com/ThunderD9" class="uk-link" target="_blank">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/dharaneesh-dhupam/" class="uk-link" target="_blank">LinkedIn</a> ·
+          <a href="https://x.com/Dharaneesh_D9" class="uk-link" target="_blank">X</a> ·
+          <a href="https://sysc.land" class="uk-link" target="_blank">sysc.land</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 Dharaneesh Dhupam · Systems Change, Inc.
+    </footer>
+
+    <script>
+htmlElement.classList.add("dark");s
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn?.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
