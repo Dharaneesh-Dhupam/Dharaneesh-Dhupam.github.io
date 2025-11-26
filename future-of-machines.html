@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Franken UI -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/utilities.min.css" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <title>The Future of Machines - Dharaneesh Dhupam</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: white;
+        }
+
+        a.uk-link {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        footer {
+            border-top: 1px solid #e5e5e5;
+            padding: 1.25rem;
+            text-align: center;
+            color: #555;
+            margin-top: 2.5rem;
+        }
+
+        .max-w-site {
+            max-width: 700px;
+            /* Slightly narrower for reading */
+        }
+
+        .max-w-header {
+            max-width: 900px;
+        }
+
+        /* Glassy navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* subtle shadow for contrast */
+        .glass-nav-shadow {
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="glass-nav glass-nav-shadow sticky top-0 z-50">
+        <div class="max-w-header mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-lg font-semibold hover:opacity-80 transition-opacity">Dharaneesh Dhupam</a>
+
+            <!-- desktop nav -->
+            <nav class="hidden md:flex gap-4 text-sm">
+                <a href="index.html#about" class="uk-link">About</a>
+                <a href="index.html#systemschange" class="uk-link">Systems Change</a>
+                <a href="index.html#projects" class="uk-link">Projects</a>
+                <a href="index.html#research" class="uk-link">Research</a>
+                <a href="index.html#writing" class="uk-link">Writing</a>
+                <a href="index.html#contact" class="uk-link">Contact</a>
+            </nav>
+
+            <!-- mobile toggle -->
+            <button id="menu-btn" class="md:hidden p-1" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-md border-t">
+            <div class="px-4 py-3 flex flex-col">
+                <a href="index.html#about" class="py-2 uk-link">About</a>
+                <a href="index.html#systemschange" class="py-2 uk-link">Systems Change</a>
+                <a href="index.html#projects" class="py-2 uk-link">Projects</a>
+                <a href="index.html#research" class="py-2 uk-link">Research</a>
+                <a href="index.html#writing" class="py-2 uk-link">Writing</a>
+                <a href="index.html#contact" class="py-2 uk-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-site mx-auto px-4 md:px-8 py-10">
+        <article class="prose prose-slate max-w-none">
+            <h1 class="text-3xl font-bold mb-2">The Future of Machines</h1>
+            <p class="text-gray-500 text-sm mb-6">June 18, 2021</p>
+
+            <img src="tfom.png" alt="Dystopian future with machines" class="w-full rounded-lg mb-8 shadow-md" />
+
+            <p class="mb-4 leading-relaxed">
+                If we look at the history of the world in the last 200 years or so, we can see that humans are making
+                machines to get work
+                done easier and cheaper. There is possibility that in the future that we will become slaves to machines,
+                but I think the chances are very low of that happening in this particular way.
+            </p>
+
+            <p class="mb-4 leading-relaxed">
+                Even if a super intelligent artificial intelligence was created, it will look at us like we do at ants,
+                we don't make ants work, we just let them live and do what they want to do and maybe give it a sugar
+                cube once in a while. We are already slaves to the machines, I don't know if the word 'slave' is correct
+                for this context but we rely a lot on the machines. We rely on our smartphones to do everything from
+                doing our work, watching movies, laughing by looking at jokes and etc. We rely on scanners like MRI and
+                CT scan for our health and we rely of satellites and cables under the oceans for communication around
+                the world. We depend on machines to travel.
+            </p>
+
+            <p class="mb-4 leading-relaxed">
+                This picture shown is a glance into the dystopian world which our world can become. I think Machines
+                will take our jobs and it's inevitable, it's just a matter of time. But that doesn't mean it's a bad
+                thing, I think it's a good thing. If machines will do our work and we have a house, food and basic
+                necessities taken care of by government or someone or something else. Then why should we work when a
+                machine can do that for us?
+            </p>
+
+            <p class="mb-4 leading-relaxed">
+                I think that's when we will start thinking about the meaning of life and ask questions like why are we
+                here on this universe. I think if we'll have a lot of time, we will start to look inside ourselves
+                and understand what we really care about. I actually look forward to Artificial intelligence taking over
+                the world, I think it will actually help us and it's probably better than many of the governments.
+            </p>
+
+            <p class="mb-4 leading-relaxed">
+                I also think that chances of that happening are low compared to the chances that humans will combine
+                their intelligence with computers and achieve the same power equivalent to a super intelligent
+                artificial
+                intelligence. I think our brain will get the processing power of our brain combined with the power of
+                super computer or a quantum computer and when that happens there will be no more diseases no more death
+                and only exploring the universe and understanding it and maybe we will go beyond our universe or we will
+                start playing a game as real as our life where we can get whatever we want and we will probably get
+                bored by getting whatever we want and finally we'll start playing a game where we don't know that we are
+                in a game,which will be as real as our life. Maybe we are already in game and we just don't know it. I
+                think this
+                will happen soon, at least I hope so.
+            </p>
+        </article>
+
+        <hr class="my-10 border-gray-200" />
+
+        <section id="reflection">
+            <div class="flex items-baseline justify-between mb-4">
+                <h2 class="text-2xl font-semibold">Reflection</h2>
+                <span class="text-gray-500 text-sm">November 2025</span>
+            </div>
+            <p class="text-gray-600 italic mb-4">
+                Looking back at this piece, I feel I missed a lot of things
+            </p>
+            <!-- Placeholder for future writing -->
+            <div class="p-4 border border-dashed border-gray-300 rounded-lg bg-gray-50 text-gray-500">
+                I wrote this 4.5 years ago, I'll update this in 2 days.
+
+        </section>
+
+    </main>
+
+    <footer class="w-full py-6 mt-10 border-t border-gray-200">
+        <div
+            class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-center md:text-left">
+            <p class="text-sm">
+                Site Last Updated:
+                <span class="">November 25, 2025</span>
+            </p>
+            <p class="text-sm">
+                © 2025 <span class=" ">Dharaneesh Dhupam</span> · Systems Change, Inc.
+            </p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn?.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+</body>
+
+</html>
