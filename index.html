@@ -1,283 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Franken UI -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/utilities.min.css" />
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
   <title>Dharaneesh Dhupam</title>
+  <meta name="description" content="Personal site of Dharaneesh Dhupam, software engineer, screenwriter, and founder building Niruddha." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     html {
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: "Inter", sans-serif;
-      background: white;
-
-
-    }
-
-    a.uk-link {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .profile-pic {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid #ddd;
-    }
-
-    footer {
-      border-top: 1px solid #e5e5e5;
-      padding: 1.25rem;
-      text-align: center;
-      color: #555;
-      margin-top: 2.5rem;
-    }
-
-    .max-w-site {
-      max-width: 900px;
-    }
-
     section {
       scroll-margin-top: 90px;
-      /* header height offset */
     }
 
-    /* Glassy navbar */
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    details summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
     }
 
-    /* subtle shadow for contrast */
-    .glass-nav-shadow {
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+    body {
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
   </style>
 </head>
 
-<body>
-  <!-- Header -->
-  <header class="glass-nav glass-nav-shadow sticky top-0 z-50">
-    <div class="max-w-site mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-lg font-semibold">Dharaneesh Dhupam</h1>
+<body class="bg-zinc-950 text-zinc-200 dark:bg-zinc-950 dark:text-zinc-200 min-h-screen font-sans antialiased leading-relaxed">
 
-      <!-- desktop nav -->
-      <nav class="hidden md:flex gap-4 text-sm">
-        <a href="#about" class="uk-link">About</a>
-        <a href="#niruddha" class="uk-link">Niruddha</a>
-        <a href="#systemschange" class="uk-link">Systems Change</a>
-        <a href="#projects" class="uk-link">Projects</a>
-        <a href="#research" class="uk-link">Research</a>
-        <a href="#writing" class="uk-link">Writing</a>
-        <a href="#contact" class="uk-link">Contact</a>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-semibold text-sm sm:text-base tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition">
+        Dharaneesh Dhupam
+      </a>
+
+      <!-- Balanced Desktop Nav -->
+      <nav class="hidden sm:flex items-center gap-5 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+        <a href="#about" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">About</a>
+        <a href="#niruddha" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Niruddha</a>
+        <a href="#systemschange" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Systems Change</a>
+        <a href="#projects" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Projects</a>
+        <a href="#writing" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Writing</a>
+        <a href="#contact" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Contact</a>
       </nav>
 
-      <!-- mobile toggle -->
-      <button id="menu-btn" class="md:hidden p-1" aria-label="Toggle menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <!-- Theme Toggle & Mobile Menu -->
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" aria-label="Toggle light/dark mode" class="p-2 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition">
+          <svg id="sun-icon" class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg id="moon-icon" class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <button id="menu-btn" class="sm:hidden p-2 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100" aria-label="Toggle menu">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-md border-t">
-      <div class="px-4 py-3 flex flex-col">
-        <a href="#about" class="py-2 uk-link">About</a>
-        <a href="#niruddha" class="py-2 uk-link">Niruddha</a>
-        <a href="#systemschange" class="py-2 uk-link">Systems Change</a>
-        <a href="#projects" class="py-2 uk-link">Projects</a>
-        <a href="#research" class="py-2 uk-link">Research</a>
-        <a href="#writing" class="py-2 uk-link">Writing</a>
-        <a href="#contact" class="py-2 uk-link">Contact</a>
-      </div>
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden sm:hidden border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm flex flex-col gap-2 font-medium text-zinc-600 dark:text-zinc-400">
+      <a href="#about" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">About</a>
+      <a href="#niruddha" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Niruddha</a>
+      <a href="#systemschange" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Systems Change</a>
+      <a href="#projects" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Projects</a>
+      <a href="#writing" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Writing</a>
+      <a href="#contact" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Contact</a>
     </div>
   </header>
 
-  <main class="max-w-site mx-auto px-4 md:px-8 py-10">
-    <!-- About -->
-    <section id="about" class="mb-12">
-      <div class="flex flex-col md:flex-row items-start gap-6">
-        <img src="DD.jpg" alt="Dharaneesh Dhupam" class="profile-pic" />
+  <!-- Main Container -->
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-24 space-y-16">
 
-        <div class="flex-1">
-          <p class="text-lg leading-relaxed">
-            I’m Dharaneesh Dhupam. I am currently building <span class="font-semibold">Niruddha</span>, an AI-native screenwriting and pre-production platform.
+    <!-- About Section -->
+    <section id="about" class="space-y-6 pt-4">
+      <div class="flex flex-col sm:flex-row items-start gap-6">
+        <img src="DD.jpg" alt="Dharaneesh Dhupam" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover border border-zinc-200 dark:border-zinc-800 shrink-0" />
+        
+        <div class="space-y-3 flex-1">
+          <div>
+            <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Dharaneesh Dhupam</h1>
+            <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400 mt-1">Founder @ Niruddha &nbsp;·&nbsp; Software Engineer & Screenwriter</p>
+          </div>
+          
+          <p class="text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
+            I’m Dharaneesh Dhupam. I am building <a href="https://niruddha.ai" target="_blank" class="underline underline-offset-4 font-medium text-zinc-900 dark:text-zinc-100 hover:opacity-80">Niruddha</a>, an AI-native screenwriting and pre-production platform.
             I love writing stuff that has never been written before & watching really good movies.
-            I enjoy learning and creating new things. I want to work on things that <span class="font-semibold">I find
-              meaningful</span>.
+            I enjoy learning and creating new things. I want to work on things that <span class="font-semibold text-zinc-900 dark:text-zinc-100">I find meaningful</span>.
             I want my work to actually improve people’s lives. Too cliché, I know. But that's what I genuinely want.
           </p>
 
+          <div class="flex items-center gap-4 text-xs">
+            <a href="Dharaneesh_Dhupam_CV.pdf" target="_blank" class="underline underline-offset-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition">View Resume &rarr;</a>
+            <a href="#" class="email-link underline underline-offset-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition" data-user="dharaneeshdhupam" data-domain="gmail.com">Contact Me</a>
+          </div>
+        </div>
+      </div>
 
+      <!-- Academic Paragraph -->
+      <div class="space-y-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed pt-3 border-t border-zinc-200 dark:border-zinc-800/80">
+        <p>
+          A little bit about my academics: I studied Electronics and Communication Engineering at Indian Institute Of Information Technology, Kurnool (2020–2024) and also studied Economics, Sociology, and Public Administration (2022–2025). I was accepted into NYU's MS in Computer Science program for 2026, but turned it down. Taking on debt for a master's didn't make sense when all I want to do is build my own things.
+        </p>
+      </div>
 
+      <!-- Collapsible Detailed Backstory -->
+      <details class="group pt-1">
+        <summary class="text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 flex items-center gap-1.5 transition select-none">
+          <span>Read full backstory & philosophy</span>
+          <span class="group-open:rotate-180 transition-transform duration-200">&darr;</span>
+        </summary>
+        
+        <div class="mt-4 space-y-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed pl-3 border-l border-zinc-200 dark:border-zinc-800">
+          <p>
+            Over the years, I saw how systems push people toward certain behaviors. A basic process like buying land turns into a long, confusing experience. That frustration led me to ask: can we build systems people actually trust? <a href="#systemschange" class="underline text-zinc-900 dark:text-zinc-200">Systems Change</a> was my first attempt to answer that, and Niruddha is my attempt to fix the same lack of infrastructure in creative production.
+          </p>
+
+          <p>
+            Since I was a kid, I was obsessed with tech and watching movies instead of going to school. After 10th grade, I watched a PewDiePie video where he spoke about doing YouTube simply because he loved the editing and creation process (feeling the same happiness for 100 subscribers as a million). That made me ask what I would do purely for the love of it, regardless of money.
+          </p>
+
+          <p>
+            That led me to writing stories, screenplays, and exploring economics and psychology. Before undergrad, I picked up coding, fell in love with Python problem sets, and learned Django through CS50 Web. I want to work on things I find meaningful without economic constraints, believing success naturally follows doing what you love.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Niruddha Section -->
+    <section id="niruddha" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">Niruddha</h2>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-800/80 text-emerald-700 dark:text-emerald-400">Live Beta</span>
+        </div>
+        <a href="https://niruddha.ai" target="_blank" class="text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition">niruddha.ai &rarr;</a>
+      </div>
+
+      <!-- Origin & Purpose in Niruddha -->
+      <div class="p-3.5 rounded border border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-1.5 text-xs sm:text-sm">
+        <span class="font-semibold text-zinc-900 dark:text-zinc-100">Origin & Purpose</span>
+        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          When I was 17, I tried making a $1,000 feature film with a camera, a mic, and a few friends, but failed because making a movie has always required a studio (hundreds of thousands of dollars, dozens of people, and months of coordination indie creators can't afford). I built Niruddha to create the pre-production tools I couldn't afford back then.
+        </p>
+      </div>
+
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        NIRUDDHA is a professional, AI-powered screenplay writing and pre-production platform: a unified workspace that bridges the gap between formatting the script and generating visual pre-vis entirely in the browser.
+      </p>
+
+      <div class="text-xs text-zinc-600 dark:text-zinc-400 flex items-start gap-2 pt-1">
+        <span class="font-semibold text-zinc-900 dark:text-zinc-200 shrink-0">Validation:</span>
+        <span>Testing with active screenwriters and producers, including an ex-Sony Pictures scriptwriter currently developing a feature horror concept on the platform.</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1">
+        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
+          <span class="font-medium text-zinc-900 dark:text-zinc-100">Smart WGA Editor</span>
+          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Hollywood-standard formatting with tracked AI co-writer changes.</p>
+        </div>
+        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
+          <span class="font-medium text-zinc-900 dark:text-zinc-100">AI Storyboard Visualizer</span>
+          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Generates multi-frame shot breakdowns from scene text.</p>
+        </div>
+        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
+          <span class="font-medium text-zinc-900 dark:text-zinc-100">AI Video Scenes</span>
+          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Renders page-by-page video scenes from screenplay context.</p>
+        </div>
+        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
+          <span class="font-medium text-zinc-900 dark:text-zinc-100">Production Breakdowns</span>
+          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Auto-tags cast, props, costumes, and VFX directly from scenes.</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-zinc-500 pt-1">
+        <a href="https://www.youtube.com/watch?v=2IaTZEqJVvw" target="_blank" class="underline text-zinc-800 dark:text-zinc-200 hover:text-zinc-500">Watch 1-minute demo video &rarr;</a>
+      </p>
+    </section>
+
+    <!-- Systems Change Section -->
+    <section id="systemschange" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">Systems Change, Inc.</h2>
+          <span class="text-xs font-mono text-zinc-500">(sysc.land &middot; currently offline)</span>
+        </div>
+        <span class="text-xs font-mono text-zinc-500">2022 – 2024</span>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+        <div>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Origin & Post-Quantum Architecture</h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-1 leading-relaxed">
+            Systems Change started out as an undergrad design project in my 3rd year of engineering. Everyone in India struggles with the bureaucracy of buying or selling a home, which my own family had experienced. I wanted to build something meaningful, so I started by creating a Post-Quantum Cryptographic land records registry (ML-DSA + IPFS) for government registries to secure land titles and prevent fraud.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Why Cryptography over Blockchain</h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-1 leading-relaxed">
+            Instead of public blockchains (which force every machine to store 100 GB+ of global state and coordinate consensus across nodes), our cryptographic design meant every user and entity only needed to hold their own records to prove ownership independently.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Pivot to 11-Step Consumer Transaction Engine</h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-1 leading-relaxed">
+            I later pivoted from the government cryptography registry to building a consumer-facing 11-step real estate transaction engine at <span class="font-mono text-xs text-zinc-400">sysc.land</span> (currently offline). Our platform made finding, buying, and selling property straightforward: handling ESIGN-compliant contracts, earnest money deposits, parallel due diligence, authority oversight, and automated deed filings directly for buyers and sellers.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Pivot to Niruddha</h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-1 leading-relaxed">
+            Eventually, real estate software presented multi-year feedback loops, heavy regulatory hurdles, and API integration costs requiring external funding. I pivoted focus to Niruddha to build in a domain I know personally as a screenwriter: enabling a feedback loop of hours rather than years and a product I could ship entirely solo without external funding.
+          </p>
         </div>
       </div>
     </section>
 
-    <p class="mt-4 leading-relaxed">
-      A little bit about my academics: I studied Electronics and Communication Engineering
-      at Indian Institute Of Information Technology, Kurnool (2020–2024)
-      and also studied Economics, Sociology, and Public Administration (2022–2025).
-      I was accepted into NYU's MS in Computer Science program for 2026, but turned it down. Taking on debt for a master's didn't make sense when all I want to do is build my own things.
-    </p>
+    <!-- Projects Section -->
+    <section id="projects" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+      <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Projects</h2>
 
-    <p class="mt-4 leading-relaxed">
-      I built <a href="https://niruddha.ai" target="_blank" class="uk-link font-semibold">Niruddha</a>, an AI-powered workspace that lets filmmakers write, plan, storyboard, generate video scenes, and run production breakdowns in the browser. Before this, I spent two years building <a href="#systemschange" class="uk-link">Systems Change, Inc.</a>, a platform for secure real estate transactions.
-    </p>
-    <p class="mt-4 leading-relaxed">
-      Over the years, I saw and understood how systems push people toward certain behaviors.
-      One example is how a basic process like buying land can turn into a long, confusing, and sometimes unfair
-      experience.
-      That frustration led me to a question: can we build systems that people can actually trust to do what they are supposed to do? <a href="#systemschange"
-        class="uk-link">Systems Change</a>
-      was my first attempt to answer that. And now, Niruddha is my attempt to fix the same lack of infrastructure in creative production.
-    </p>
-
-
-
-    <p class="mt-4 mb-8">
-      <a href="Dharaneesh_Dhupam_CV.pdf" class="uk-link" target="_blank">View resume</a>
-    </p>
-
-    <h2 class="text-2xl font-semibold mt-4 mb-3">A bit about me</h2>
-    <p class="mt-4 leading-relaxed">
-      Since I was a kid, I have always been interested in technology, I used to follow the releases of new phones &
-      dream
-      of building myself a PC & having a nice desk setup.
-      I used to watch a lot of movies & series instead of going to school.
-      After completing my 10th grade, I started thinking about what i really want to do and what kind
-      of life I want to live.
-      I was watching a Youtube video of Pewdiepie and he was talking about his start on Youtube & he said that he
-      just wanted to share the fun he is having by playing games and that he really enjoyed the process of editing
-      videos & uploading them.
-      He said, he felt the same amount of 'happiness' for 100 subscribers as he did for a million. He didn't do it for
-      fame or money. He did it because that's what he truly enjoyed.
-    </p>
-    <p class="mt-4 leading-relaxed">
-      After that, I started thinking about what is something that I really enjoy doing? & What is something that I would
-      do irrespective of whether it makes money?
-      Then I started exploring a lot of different things including economics, psychology,
-      and one of the things I found out was that I really enjoyed the process of thinking,
-      coming up with new ideas, and creating something new,
-      so I started writing stories, which evolved into writing screenplays.
-      Along the way, I also came across coding; it seemed interesting,
-      so I gave it a try before starting my undergrad, and I learned the basics and forgot about it.
-      I really started to enjoy solving Python problem sets during my undergrad minor.
-      In the process I also learned the Django Framework & started building small projects with the help of
-      <a href="https://cs50.harvard.edu/web/" class="uk-link">CS50 Web Development Course</a>.
-    </p>
-    <p class="mt-4 leading-relaxed mb-8">
-      Basically, I want to work on things that I find interesting and meaningful, without the worry of economic
-      constraints. I also believe that if we do what we truly love, success will naturally follow, and we don’t need to
-      worry about chasing it.
-    </p>
-
-    <!-- Niruddha -->
-    <section id="niruddha" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">Niruddha</h2>
-
-      <p class="leading-relaxed">
-        NIRUDDHA is a professional, AI-powered screenplay writing and pre-production platform — a unified workspace that bridges the gap between formatting the script and generating visual pre-vis entirely in the browser.
-      </p>
-
-      <p class="mt-3">
-        Live at <a href="https://niruddha.ai" target="_blank" class="uk-link font-semibold">niruddha.ai</a>. Watch the <a href="https://youtu.be/g3HrONxaZXE?si=fxe5MSWjk-YYec37" target="_blank" class="uk-link">v1 demo video</a> (since then, many new features have been added, including a page-by-page video production pipeline, character-specific beatboards, and inline annotations).
-      </p>
-
-      <h3 class="mt-6 font-semibold">Key features</h3>
-      <ul class="list-disc pl-6 mt-2 space-y-2">
-        <li><span class="font-semibold">Smart Editor:</span> Zero-setup, Hollywood-standard formatting with inline AI tracked changes (powered by Gemini).</li>
-        <li><span class="font-semibold">AI Visualizer:</span> Generates complete multi-frame storyboards directly from screenplay text in one click.</li>
-        <li><span class="font-semibold">Video Pipeline:</span> Generates page-by-page video scenes directly from text context or reference images.</li>
-        <li><span class="font-semibold">Production Breakdowns:</span> Automatically tags cast, props, costumes, and VFX directly from the scenes.</li>
-        <li><span class="font-semibold">BeatBoard:</span> A visual, node-based planning canvas to map out stories and organize drafts.</li>
-      </ul>
-    </section>
-
-    <!-- Systems Change -->
-    <section id="systemschange" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">Systems Change, Inc.</h2>
-
-      <p class="leading-relaxed">
-        We are replacing legacy government administrative systems with a transparent, verifiable digital infrastructure.
-        Our platform makes finding, buying, and selling property straightforward: you find a property, sign digitally,
-        and we handle the compliance.
-      </p>
-
-      <p class="mt-3">
-        Project status: Completed (currently offline).
-      </p>
-
-      <h3 class="mt-6 font-semibold">How it works</h3>
-      <ol class="list-decimal pl-6 mt-2 space-y-2">
-        <li>Discover and verify properties with transparent records.</li>
-        <li>Approve with a digital signature. No paperwork.</li>
-        <li>We handle the filings and send you the final documents.</li>
-      </ol>
-
-      <h3 class="mt-6 font-semibold">Why this matters</h3>
-      <ul class="list-disc pl-6 mt-2 space-y-2">
-        <li><span class="font-semibold">Security:</span> Built with Post-Quantum Digital Signatures (ML-DSA) for
-          future-proof trust.</li>
-        <li><span class="font-semibold">Integrity:</span> Immutable and decentralized ownership history using IPFS.</li>
-        <li><span class="font-semibold">Simplicity:</span> A fast, clear process that eliminates paperwork and
-          confusion.</li>
-      </ul>
-
-      <h3 class="mt-6 font-semibold ">
-        The beginning of Systems Change
-      </h3>
-
-      <p class="mt-2 text-gray-700 leading-relaxed">
-        Something I saw others struggling with years ago, but didn’t think much about at the time, kept coming back to
-        me.
-        Later, in my 3rd year of undergrad, I had to do a design project and I really wanted to build something I’d find
-        meaningful
-        and useful. Around that time, the cryptocurrency market had gone through a major boom and bust cycle.
-        I had heard about blockchain a few years earlier and only knew its surface-level properties like immutability
-        and
-        decentralization. One thing I did know was that everyone in India struggles with the bureaucracy of buying or
-        selling a
-        home, which my own family had experienced. So I thought I could use blockchain to improve land records somehow.
-        The idea evolved into something better. I eventually switched to a different architecture because blockchain was
-        not suited
-        for the job. I kept working on it through many iterations, I learned a LOT in that process and after two years I
-        finally decided to take it
-        seriously and
-        start a company.
-      </p>
-
-
-
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">Projects</h2>
-
-      <ul class="list-disc pl-6 space-y-3">
+      <ul class="list-disc pl-5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 space-y-3">
         <li>
-          <a href="https://github.com/ThunderD9/seaofus.com" class="uk-link" target="_blank">SeaofUs</a> (codebase) — a full-stack social blogging platform built from scratch to learn HTMX and Django. It integrated local AI models (Llama 3.1 and Flux) for writing assistance and image generation (currently offline).
+          <a href="https://github.com/ThunderD9/seaofus.com" class="site-link font-semibold text-zinc-900 dark:text-zinc-100" target="_blank">SeaofUs</a> (codebase): a full-stack social blogging platform built from scratch to learn HTMX and Django. It integrated local AI models (Llama 3.1 and Flux) for writing assistance and image generation (currently offline).
         </li>
         <li>
           Automated government data entry using pandas and Selenium, turning a 4-week manual survey data entry job for my mother's welfare office into a 4-day automated script run.
@@ -285,135 +264,177 @@
       </ul>
     </section>
 
-    <!-- Research -->
-    <section id="research" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">Research</h2>
+    <!-- Research Section -->
+    <section id="research" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+      <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Research & Publications</h2>
 
-      <p class="leading-relaxed">
-        I’m interested in building systems that can be useful while guaranteeing security, privacy & simplicity. My work
-        explores how cryptographic trust can work at scale without making systems too complex for real use and actually
-        solve real human problems. I am also interested in Economics, Behavioural Economics, Designing of Market Systems
-        & other interesting stuff.
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        I’m interested in building systems that can be useful while guaranteeing security, privacy & simplicity. My work explores how cryptographic trust can work at scale without making systems too complex for real use and actually solve real human problems. I am also interested in Economics, Behavioural Economics, Designing of Market Systems & other interesting stuff.
       </p>
 
-      <h3 class="mt-4 font-semibold">Some work</h3>
-      <ul class="list-disc pl-6 mt-2 space-y-2">
-        <li>
-          <a href="https://doi.org/10.31237/osf.io/nhwks_v1" class="uk-link" target="_blank">
-            Post-Quantum Cryptography based Land Records Management System
-          </a>
-        </li>
-        <li>
-          <a href="https://doi.org/10.36227/techrxiv.175234511.12096363/v2" class="uk-link" target="_blank">
-            PQC-VE: Verifiable Electronic Voting Framework
-          </a>
-        </li>
-        <li>
-          <a href="https://doi.org/10.31219/osf.io/9rmf5_v2" class="uk-link" target="_blank">
-            The Theory of Replaceability (Evolutionary Biology)
-          </a>
-        </li>
-      </ul>
+      <div class="space-y-3 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+        <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Some work</h3>
+        <ul class="list-disc pl-5 space-y-3">
+          <li class="leading-relaxed">
+            <a href="https://doi.org/10.31237/osf.io/nhwks_v1" class="site-link font-medium text-zinc-900 dark:text-zinc-100" target="_blank">
+              Post-Quantum Cryptography based Land Records Management System
+            </a>
+            <div class="mt-0.5">
+              <span class="text-zinc-500 font-mono text-xs">DOI link: </span>
+              <a href="https://doi.org/10.31237/osf.io/nhwks_v1" target="_blank" class="font-mono text-xs text-blue-600 dark:text-blue-400 underline hover:opacity-80 break-all">https://doi.org/10.31237/osf.io/nhwks_v1</a>
+            </div>
+          </li>
+
+          <li class="leading-relaxed">
+            <a href="https://doi.org/10.36227/techrxiv.175234511.12096363/v2" class="site-link font-medium text-zinc-900 dark:text-zinc-100" target="_blank">
+              PQC-VE: Verifiable Electronic Voting Framework
+            </a>
+            <div class="mt-0.5">
+              <span class="text-zinc-500 font-mono text-xs">DOI link: </span>
+              <a href="https://doi.org/10.36227/techrxiv.175234511.12096363/v2" target="_blank" class="font-mono text-xs text-blue-600 dark:text-blue-400 underline hover:opacity-80 break-all">https://doi.org/10.36227/techrxiv.175234511.12096363/v2</a>
+            </div>
+          </li>
+
+          <li class="leading-relaxed">
+            <a href="https://doi.org/10.31219/osf.io/9rmf5_v2" class="site-link font-medium text-zinc-900 dark:text-zinc-100" target="_blank">
+              The Theory of Replaceability (Evolutionary Biology)
+            </a>
+            <div class="mt-0.5">
+              <span class="text-zinc-500 font-mono text-xs">DOI link: </span>
+              <a href="https://doi.org/10.31219/osf.io/9rmf5_v2" target="_blank" class="font-mono text-xs text-blue-600 dark:text-blue-400 underline hover:opacity-80 break-all">https://doi.org/10.31219/osf.io/9rmf5_v2</a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Writing -->
-    <section id="writing" class="mb-12">
-      <h2 class="text-2xl font-semibold mb-3">Writing</h2>
+    <!-- Writing Section -->
+    <section id="writing" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+      <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Writing</h2>
 
-      <p class="leading-relaxed">
-        I started writing before college, mostly screenplays and short essays. I fell in love with writing.
-        I guess it helps me understand myself better and helps me think clearly. It’s something I keep
-        coming back to.
-      <p class="pt-2">Until Now I have written 2 full length screenplays, the first in 2020, still haven't decided on a
-        title for it.
-        The 2nd one I completed in 2021, it's called <span class="italic">Chemicals</span>. Since then I have been
-        working on another one titled
-        <span class="italic">The World has gone Mad</span>.
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        I started writing before college, mostly screenplays and short essays. I fell in love with writing. I guess it helps me understand myself better and helps me think clearly. It’s something I keep coming back to.
       </p>
-      <p class="pt-2">I am thinking of maybe writing it like a book but I don't know if I can translate the visuals of
-        the screenplay into a book.
-        I should probably write it as a comicbook or something with the help of AI for image gen.</p>
 
-      <div class="pt-4 space-y-3">
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        Until Now I have written 2 full length screenplays, the first in 2020, still haven't decided on a title for it. The 2nd one I completed in 2021, it's called <span class="italic">Chemicals</span>. Since then I have been working on another one titled <span class="italic">The World has gone Mad</span>.
+      </p>
+
+      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        I am thinking of maybe writing it like a book but I don't know if I can translate the visuals of the screenplay into a book. I should probably write it as a comicbook or something with the help of AI for image gen.
+      </p>
+
+      <div class="space-y-3 pt-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
         <div>
-          <h3 class="font-semibold text-md">Screenplay 1: <span class="italic">Untitled</span></h3>
-          <p class="text-gray-700">Synopsis: A bank robbery goes wrong in the 1990s, with two protagonists trying to
-            escape.</p>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Screenplay 1: <span class="italic font-normal">Untitled</span></h3>
+          <p class="text-zinc-600 dark:text-zinc-400">Synopsis: A bank robbery goes wrong in the 1990s, with two protagonists trying to escape.</p>
         </div>
 
         <div>
-          <h3 class="font-semibold text-md">Screenplay 2: <span class="italic">Chemicals</span></h3>
-          <p class="text-gray-700">Synopsis: Bizarre things happen when two college kids take a drug that one of them
-            created.</p>
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Screenplay 2: <span class="italic font-normal">Chemicals</span></h3>
+          <p class="text-zinc-600 dark:text-zinc-400">Synopsis: Bizarre things happen when two college kids take a drug that one of them created.</p>
         </div>
-        <p class="pt-2">If you want the copies of the screenplays, feel free to email me.</p>
+
+        <p class="text-zinc-500 pt-1">If you want the copies of the screenplays, feel free to email me.</p>
       </div>
 
-      <p class="pt-2">I built <a href="https://github.com/ThunderD9/seaofus.com" class="uk-link" target="_blank">SeaofUs</a> to have a private place to share my ideas and thoughts. Although the live platform is currently offline, the codebase is open-source. It featured a custom WYSIWYG editor and local AI generation pipelines to explore writing workflows.
-      </p>
+      <div class="pt-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 space-y-3">
+        <p>
+          I built <a href="https://github.com/ThunderD9/seaofus.com" class="site-link font-semibold text-zinc-900 dark:text-zinc-100" target="_blank">SeaofUs</a> to have a private place to share my ideas and thoughts. Although the live platform is currently offline, the codebase is open-source. It featured a custom WYSIWYG editor and local AI generation pipelines to explore writing workflows.
+        </p>
 
-      <p class="pt-2">
-        I wrote the short essay a few years ago about the future of humanity and machines in a .txt file and i just
-        named it 'future',
-        i guess it was my ideal/hopeful view of the future and the future I wanted to have / I predicted. I wrote this
-        before chatgpt came out.
-        But now even though I still agree with many of the things I wanted the future to have, as discussed in the
-        essay. I don't
-        think I have correctly evaluated the cost which we'll have to pay and also my thinking has matured a lot. So now
-        I've added another section called 'Reflection' to revisit the essay & discuss the things I missed.
-        Thought it'll be interesting to discuss. Please give it a read if you have the time 😊.
+        <p>
+          I wrote the short essay a few years ago about the future of humanity and machines in a .txt file and i just named it 'future', i guess it was my ideal/hopeful view of the future and the future I wanted to have / I predicted. I wrote this before chatgpt came out. But now even though I still agree with many of the things I wanted the future to have, as discussed in the essay. I don't think I have correctly evaluated the cost which we'll have to pay and also my thinking has matured a lot. So now I've added another section called 'Reflection' to revisit the essay & discuss the things I missed. Thought it'll be interesting to discuss. Please give it a read if you have the time 😊.
+        </p>
 
-      </p>
-
-      <ul class="list-disc pl-6 mt-4 space-y-2">
-        <li>
-          <a href="future-of-machines.html" class="uk-link">The Future of Machines </a> &nbsp; &mdash; May 29, 2021
-        </li>
-      </ul>
+        <p class="pt-1">
+          <a href="future-of-machines.html" class="site-link font-medium text-zinc-900 dark:text-zinc-100">The Future of Machines &nearr;</a> &nbsp;&middot;&nbsp; May 29, 2021
+        </p>
+      </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="mb-8">
-      <h2 class="text-2xl font-semibold mb-3">Contact</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+      <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Contact</h2>
 
-      <p class="leading-relaxed">
-        Email:
-        <a href="mailto:dharaneeshdhupam&#64;gmail&#46;com" class="uk-link">
-          dharaneeshdhupam&#64;gmail&#46;com
-        </a><br />
-        Alt:
-        <a href="mailto:dd&#64;niruddha&#46;ai" class="uk-link">
-          dd&#64;niruddha&#46;ai
-        </a>
-      </p>
+      <div class="space-y-3 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+        <p class="text-zinc-500 text-xs">
+          Feel free to reach out via email:
+        </p>
+        
+        <div class="flex flex-col gap-1.5 font-mono text-xs">
+          <div class="flex items-center gap-2">
+            <span class="text-zinc-400 text-[11px] font-sans">Primary:</span>
+            <a href="#" class="email-link text-zinc-900 dark:text-zinc-100 underline hover:opacity-75" data-user="dharaneeshdhupam" data-domain="gmail.com">dharaneeshdhupam [at] gmail [dot] com</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-zinc-400 text-[11px] font-sans">Startup:</span>
+            <a href="#" class="email-link text-zinc-500 dark:text-zinc-400 underline hover:text-zinc-900 dark:hover:text-zinc-200" data-user="dd" data-domain="niruddha.ai">dd [at] niruddha [dot] ai</a>
+          </div>
+        </div>
 
-      <p class="mt-3">
-        <a href="https://github.com/ThunderD9" class="uk-link" target="_blank">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/dharaneesh-dhupam/" class="uk-link" target="_blank">LinkedIn</a> ·
-        <a href="https://x.com/Dharaneesh_D9" class="uk-link" target="_blank">X</a>
-      </p>
+        <div class="pt-3 flex items-center gap-4 text-xs font-medium text-zinc-500 dark:text-zinc-400">
+          <a href="https://github.com/ThunderD9" target="_blank" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">GitHub &nearr;</a>
+          <a href="https://www.linkedin.com/in/dharaneesh-dhupam/" target="_blank" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">LinkedIn &nearr;</a>
+          <a href="https://x.com/Dharaneesh_D9" target="_blank" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">X (Twitter) &nearr;</a>
+        </div>
+      </div>
     </section>
+
   </main>
 
-  <footer class="w-full py-6 mt-10 border-t border-gray-200">
-    <div
-      class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-center md:text-left">
-      <p class="text-sm">
-        Site Last Updated:
-        <span class="">June 18, 2026</span>
-      </p>
-      <p class="text-sm">
-        © 2026 <span class=" ">Dharaneesh Dhupam</span> · Systems Change, Inc.
-      </p>
+  <!-- Footer -->
+  <footer class="w-full py-6 border-t border-zinc-200 dark:border-zinc-800/80 text-xs text-zinc-500">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>Site Last Updated: July 21, 2026</p>
+      <p>© 2026 Dharaneesh Dhupam</p>
     </div>
   </footer>
 
+  <!-- Light/Dark Mode Toggle & Anti-Scraping Script -->
   <script>
-    htmlElement.classList.add("dark");
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    menuBtn?.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        htmlElement.classList.remove('dark');
+        document.body.classList.remove('bg-zinc-950', 'text-zinc-200');
+        document.body.classList.add('bg-white', 'text-zinc-900');
+      } else {
+        htmlElement.classList.add('dark');
+        document.body.classList.remove('bg-white', 'text-zinc-900');
+        document.body.classList.add('bg-zinc-950', 'text-zinc-200');
+      }
+    }
+
+    const storedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(storedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = htmlElement.classList.contains('dark');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.email-link').forEach(link => {
+      const user = link.getAttribute('data-user');
+      const domain = link.getAttribute('data-domain');
+      if (user && domain) {
+        const fullEmail = user + '@' + domain;
+        link.textContent = fullEmail;
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.location.href = 'mailto:' + fullEmail;
+        });
+      }
     });
   </script>
 </body>
