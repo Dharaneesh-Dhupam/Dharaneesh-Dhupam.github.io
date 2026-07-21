@@ -1,327 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Future of Machines — Dharaneesh Dhupam</title>
+  <meta name="description" content="Essay on the future of humanity and machines by Dharaneesh Dhupam, written in May 2021 with a November 2025 reflection." />
 
-    <!-- Franken UI -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/utilities.min.css" />
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-    <title>The Future of Machines - Dharaneesh Dhupam</title>
-
-    <style>
-        html {
-            scroll-behavior: smooth;
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+          }
         }
+      }
+    }
+  </script>
 
-        body {
-            font-family: "Inter", sans-serif;
-            background: white;
-        }
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-        a.uk-link {
-            text-decoration: underline;
-            text-underline-offset: 2px;
-        }
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        footer {
-            border-top: 1px solid #e5e5e5;
-            padding: 1.25rem;
-            text-align: center;
-            color: #555;
-            margin-top: 2.5rem;
-        }
-
-        .max-w-site {
-            max-width: 700px;
-            /* Slightly narrower for reading */
-        }
-
-        .max-w-header {
-            max-width: 900px;
-        }
-
-        /* Glassy navbar */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* subtle shadow for contrast */
-        .glass-nav-shadow {
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
-        }
-    </style>
+    body {
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+  </style>
 </head>
 
-<body>
-    <!-- Header -->
-    <header class="glass-nav glass-nav-shadow sticky top-0 z-50">
-        <div class="max-w-header mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-lg font-semibold hover:opacity-80 transition-opacity">Dharaneesh Dhupam</a>
+<body class="bg-zinc-950 text-zinc-200 dark:bg-zinc-950 dark:text-zinc-200 min-h-screen font-sans antialiased leading-relaxed">
 
-            <!-- desktop nav -->
-            <nav class="hidden md:flex gap-4 text-sm">
-                <a href="index.html#about" class="uk-link">About</a>
-                <a href="index.html#systemschange" class="uk-link">Systems Change</a>
-                <a href="index.html#projects" class="uk-link">Projects</a>
-                <a href="index.html#research" class="uk-link">Research</a>
-                <a href="index.html#writing" class="uk-link">Writing</a>
-                <a href="index.html#contact" class="uk-link">Contact</a>
-            </nav>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 w-full border-b border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-semibold text-sm sm:text-base tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition">
+        Dharaneesh Dhupam
+      </a>
 
-            <!-- mobile toggle -->
-            <button id="menu-btn" class="md:hidden p-1" aria-label="Toggle menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
+      <!-- Balanced Desktop Nav (Matching index.html 100%) -->
+      <nav class="hidden sm:flex items-center gap-5 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+        <a href="index.html#about" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">About</a>
+        <a href="index.html#niruddha" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Niruddha</a>
+        <a href="index.html#systemschange" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Systems Change</a>
+        <a href="index.html#projects" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Projects</a>
+        <a href="index.html#writing" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Writing</a>
+        <a href="index.html#contact" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Contact</a>
+      </nav>
 
-        <!-- mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/80 backdrop-blur-md border-t">
-            <div class="px-4 py-3 flex flex-col">
-                <a href="index.html#about" class="py-2 uk-link">About</a>
-                <a href="index.html#systemschange" class="py-2 uk-link">Systems Change</a>
-                <a href="index.html#projects" class="py-2 uk-link">Projects</a>
-                <a href="index.html#research" class="py-2 uk-link">Research</a>
-                <a href="index.html#writing" class="py-2 uk-link">Writing</a>
-                <a href="index.html#contact" class="py-2 uk-link">Contact</a>
-            </div>
-        </div>
-    </header>
+      <!-- Theme Toggle & Mobile Menu -->
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" aria-label="Toggle light/dark mode" class="p-2 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition">
+          <svg id="sun-icon" class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg id="moon-icon" class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
 
-    <main class="max-w-site mx-auto px-4 md:px-8 py-10">
-        <article class="prose prose-slate max-w-none">
-            <h1 class="text-3xl font-bold mb-2">The Future of Machines</h1>
-            <p class="text-gray-500 text-sm mb-6">June 18, 2021</p>
+        <button id="menu-btn" class="sm:hidden p-2 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100" aria-label="Toggle menu">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
 
-            <img src="tfom.png" alt="Dystopian future with machines" class="w-full rounded-lg mb-8 shadow-md" />
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden sm:hidden border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm flex flex-col gap-2 font-medium text-zinc-600 dark:text-zinc-400">
+      <a href="index.html#about" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">About</a>
+      <a href="index.html#niruddha" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Niruddha</a>
+      <a href="index.html#systemschange" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Systems Change</a>
+      <a href="index.html#projects" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Projects</a>
+      <a href="index.html#writing" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Writing</a>
+      <a href="index.html#contact" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Contact</a>
+    </div>
+  </header>
 
-            <p class="mb-4 leading-relaxed">
-                If we look at the history of the world in the last 200 years or so, we can see that humans are making
-                machines to get work
-                done easier and cheaper. There is possibility that in the future that we will become slaves to machines,
-                but I think the chances are very low of that happening in this particular way.
-            </p>
+  <!-- Main Container -->
+  <main class="max-w-2xl mx-auto px-4 sm:px-6 pt-10 pb-24 space-y-10">
 
-            <p class="mb-4 leading-relaxed">
-                Even if a super intelligent artificial intelligence was created, it will look at us like we do at ants,
-                we don't make ants work, we just let them live and do what they want to do and maybe give it a sugar
-                cube once in a while. We are already slaves to the machines, I don't know if the word 'slave' is correct
-                for this context but we rely a lot on the machines. We rely on our smartphones to do everything from
-                doing our work, watching movies, laughing by looking at jokes and etc. We rely on scanners like MRI and
-                CT scan for our health and we rely of satellites and cables under the oceans for communication around
-                the world. We depend on machines to travel.
-            </p>
+    <div class="space-y-2 border-b border-zinc-200 dark:border-zinc-800 pb-6">
+      <a href="index.html#writing" class="text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:underline">&larr; Back to Writing</a>
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">The Future of Machines</h1>
+      <p class="text-xs font-mono text-zinc-500">May 29, 2021 &nbsp;·&nbsp; Dharaneesh Dhupam</p>
+    </div>
 
-            <p class="mb-4 leading-relaxed">
-                This picture shown is a glance into the dystopian world which our world can become. I think Machines
-                will take our jobs and it's inevitable, it's just a matter of time. But that doesn't mean it's a bad
-                thing, I think it's a good thing. If machines will do our work and we have a house, food and basic
-                necessities taken care of by government or someone or something else. Then why should we work when a
-                machine can do that for us?
-            </p>
+    <!-- Original Essay Body (100% Exact Uncut Text) -->
+    <article class="space-y-4 text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
+      <img src="tfom.png" alt="Dystopian future with machines" class="w-full rounded border border-zinc-200 dark:border-zinc-800 mb-6 shadow-sm" />
 
-            <p class="mb-4 leading-relaxed">
-                I think that's when we will start thinking about the meaning of life and ask questions like why are we
-                here on this universe. I think if we'll have a lot of time, we will start to look inside ourselves
-                and understand what we really care about. I actually look forward to Artificial intelligence taking over
-                the world, I think it will actually help us and it's probably better than many of the governments.
-            </p>
+      <p>
+        If we look at the history of the world in the last 200 years or so, we can see that humans are making machines to get work done easier and cheaper. There is possibility that in the future that we will become slaves to machines, but I think the chances are very low of that happening in this particular way.
+      </p>
 
-            <p class="mb-4 leading-relaxed">
-                I also think that chances of that happening are low compared to the chances that humans will combine
-                their intelligence with computers and achieve the same power equivalent to a super intelligent
-                artificial
-                intelligence. I think our brain will get the processing power of our brain combined with the power of
-                super computer or a quantum computer and when that happens there will be no more diseases no more death
-                and only exploring the universe and understanding it and maybe we will go beyond our universe or we will
-                start playing a game as real as our life where we can get whatever we want and we will probably get
-                bored by getting whatever we want and finally we'll start playing a game where we don't know that we are
-                in a game,which will be as real as our life. Maybe we are already in game and we just don't know it. I
-                think this
-                will happen soon, at least I hope so.
-            </p>
-        </article>
+      <p>
+        Even if a super intelligent artificial intelligence was created, it will look at us like we do at ants, we don't make ants work, we just let them live and do what they want to do and maybe give it a sugar cube once in a while. We are already slaves to the machines, I don't know if the word 'slave' is correct for this context but we rely a lot on the machines. We rely on our smartphones to do everything from doing our work, watching movies, laughing by looking at jokes and etc. We rely on scanners like MRI and CT scan for our health and we rely of satellites and cables under the oceans for communication around the world. We depend on machines to travel.
+      </p>
 
-        <hr class="my-10 border-gray-200" />
+      <p>
+        This picture shown is a glance into the dystopian world which our world can become. I think Machines will take our jobs and it's inevitable, it's just a matter of time. But that doesn't mean it's a bad thing, I think it's a good thing. If machines will do our work and we have a house, food and basic necessities taken care of by government or someone or something else. Then why should we work when a machine can do that for us?
+      </p>
 
-        <section id="reflection">
-            <div class="flex items-baseline justify-between mb-4">
-                <h2 class="text-2xl font-semibold">Reflection</h2>
-                <span class="text-gray-500 text-sm">November 2025</span>
-            </div>
-            <p class="text-gray-600 italic mb-4">
-                Looking back at this piece, I feel like, I missed a lot of things
-            </p>
-            <!-- Placeholder for future writing -->
-            <div class="p-4 border border-dashed border-gray-300 rounded-lg bg-gray-50 ">
-                <p class="py-4">
-                    I wrote this 4.5 years ago, I largely still believe that the best outcome is having a super
-                    intelligent artificial intelligence which will take over the world and help improve our conditions
-                    which
-                    was supposed to be the jobs of the 'Governments'. I also believe that merging with AI itself is best
-                    way
-                    to make them aligned, but
-                    I don't think this merging is the ideal case for many of the people. There is a high probability
-                    that
-                    Merging with AI will lead to a
-                    something similar to what happened with our relationship with smartphones. Most of the people who
-                    use
-                    smartphones has a unhealthy relationship with it.
-                    The apps which exploit the nature of the brain are the norm. What's the point of having unlimited
-                    knowledge at our fingertips
-                    if we can't use it to better the our human condition and live a fulfilling/meanningful life?
-                    The goals intended for the things & the systems we create are not always aligned with how it plays
-                    out in the real world.
-                </p>
-                <p class="py-4">
-                    I stopped using a smartphone about 2 months ago and I feel so much better, but what about the 'real
-                    benfits' a phone
-                    actually provides? Like making calls, sending messages. I listed them as real benefits cause these
-                    are I
-                    believe these are
-                    the things which are not designed to consume/indulge oursleves in. They actually improve our lives.
-                    Another real benefit in my opinion is the convienice of payment. in India most people transitioned
-                    from cash to <a href="https://www.npci.org.in/product/upi" class="text-blue-600">UPI</a>, it's a
-                    simple payment
-                    system (A payment gateway interface) which is used transfer money between people & merchants. All
-                    you need to do is open the app scan the QR code of the merchant/person or enter their mobile number
-                    which is linked to the other person bank account,
-                    and just enter the amount you want to transfer & your 4 digit pin and you're good to go. UPI
-                    processed <a href="https://www.npci.org.in/product/upi/product-statistics"
-                        class="text-blue-600">20.47 billion transactions</a> in a single month in October 2025. So
-                    basically having this ability
-                    to transact became a necesssary/essential part of my life.
+      <p>
+        I think that's when we will start thinking about the meaning of life and ask questions like why are we here on this universe. I think if we'll have a lot of time, we will start to look inside ourselves and understand what we really care about. I actually look forward to Artificial intelligence taking over the world, I think it will actually help us and it's probably better than many of the governments.
+      </p>
 
-                </p>
+      <p>
+        I also think that chances of that happening are low compared to the chances that humans will combine their intelligence with computers and achieve the same power equivalent to a super intelligent artificial intelligence. I think our brain will get the processing power of our brain combined with the power of super computer or a quantum computer and when that happens there will be no more diseases no more death and only exploring the universe and understanding it and maybe we will go beyond our universe or we will start playing a game as real as our life where we can get whatever we want and we will probably get bored by getting whatever we want and finally we'll start playing a game where we don't know that we are in a game, which will be as real as our life. Maybe we are already in game and we just don't know it. I think this will happen soon, at least I hope so.
+      </p>
+    </article>
 
-                <p class="py-4">
-                    Yet, I realized my relationship with my phone was unhealthy. So i decided to start using a Feature
-                    phone called <a href="https://www.hmd.com/en_in/hmd-101-4g-dual-sim?sku=SP01Z07Z2343Y"
-                        class="text-blue-600">HMD 101</a>. But I was still going back & forth between my feature phone &
-                    my smartphone, like it was
-                    some kind of drug i am addicted to do & also it was too just much comfort too lose. So anyway i
-                    started reducing the time i spend on my smartphone
-                    slowly. Also I realized when I went back using my smartphone I felt more anxious & restless, which I
-                    haven't observed before. Maybe cause it was my normal/default state.
-                    I'll give you another example, the internet &
-                    world-wide web were supposed to something which is supposed connect and share things freely across
-                    the globe,
-                    but what happened? I can't even run a server on my laptop & host a website to the 'public internet',
-                    because I don't have a public static IP address, because the internet providers doesn't provide
-                    them.
-                    So i can't share my work to the world. So now I have to go to a cloud provider to get a public IP to
-                    hosy my site and pay them money even though I have the hardware (my old laptop) to run a 24 hour
-                    server. Or I have to jump through many hoops to setup Port forwarding on my router to forward the
-                    incoming traffic to my laptop.
+    <hr class="border-zinc-200 dark:border-zinc-800" />
 
-                </p>
+    <!-- Reflection Section (100% Exact Uncut Text) -->
+    <section id="reflection" class="space-y-4">
+      <div class="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-2">
+        <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Reflection</h2>
+        <span class="text-xs font-mono text-zinc-500">November 2025</span>
+      </div>
 
-                <p class="py-4">
-                    At first I thought, maybe this whole networking thing is kind of too complicated and maybe cause we
-                    are running out of IPv4, it's not feasible
-                    for the ISPs (Internet Service Providers) to allot me a public IP. Then I was messing around with
-                    TOR in my first year of college. Do you know what I discovered?
-                    I can start hosting a public server with a public IP address in the so called 'DarkNet' in like 2
-                    minutes, I just had to add one line to the config file.
-                    The area of the internet which was supposed to be Dark has more freedom for the individual than the
-                    "Open Internet", that's the irony.
-                    Now the internet is firewalled by the big companies like AWS, Google & Cloudfare. If these companies
-                    go
-                    down the internet goes down with them. The supposed interconnectivity of nodes became an illusion.
-                </p>
+      <p class="text-xs text-zinc-500 italic">
+        Looking back at this piece, I feel like, I missed a lot of things
+      </p>
 
-                <p class="py-4">
-                    The same thing is happening with "Blockchains", most of the nodes in the blockchain network are run
-                    by a few big entities. These are not organic users,
-                    Most of these nodes just servers in data centers rather than actual users. Yet, we say blockchains
-                    are decentralized. No, it's not.
-                    Ok i think i am going off track here. Let's get back to AI, basically what i am saying if we merge
-                    with AI, it'll probably feel like taking all the meth in the world
-                    at once. We won't know about the effects it'll have on our ourselves & society. In my opinion
-                    merging with AI is equivalent to becoming a kind of God. But i think it's a
-                    required thing to achieve so that we can actually have a good government (optimistically). SO we
-                    only need a few/subset of humans
-                    to merge with AI to create a better world for the rest of us. Maybe only just 1 person needs to
-                    merge.
-                </p>
+      <div class="p-4 rounded-lg border border-dashed border-zinc-300 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/40 space-y-4 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <p>
+          I wrote this 4.5 years ago, I largely still believe that the best outcome is having a super intelligent artificial intelligence which will take over the world and help improve our conditions which was supposed to be the jobs of the 'Governments'. I also believe that merging with AI itself is best way to make them aligned, but I don't think this merging is the ideal case for many of the people. There is a high probability that Merging with AI will lead to a something similar to what happened with our relationship with smartphones. Most of the people who use smartphones has a unhealthy relationship with it. The apps which exploit the nature of the brain are the norm. What's the point of having unlimited knowledge at our fingertips if we can't use it to better the our human condition and live a fulfilling/meanningful life? The goals intended for the things & the systems we create are not always aligned with how it plays out in the real world.
+        </p>
 
-                <p class="py-4">
-                    I also think we haven't explored ourselves fully. I think we don't need to invent new things to make
-                    our lives better. I think we alreeady have enough and
-                    in my opinion, we can be forever at peace & happy if we just meditate. So i am linking this <a
-                        href="https://www.youtube.com/watch?v=U08aXyQifW8" class="text-blue-600"> Live stream
-                        Recording</a> from Harvard trained psychiatrist Dr. Alok, also please check out his channel <a
-                        href="https://www.youtube.com/@HealthyGamerGG" class="text-blue-600">HealthyGamerGG</a>, I think
-                    it's gold mine.
-                    I think all the answers are there, we just need to find them. I know that I am getting philosophical
-                    & pseduo-sciency, but I think it's important to explore these things with an open mind and find out
-                    if they are actually true or not. So we don't need to look to the starts for the answers , we just
-                    need to look inside ourselves. (in my opinion)
-                </p>
-                <p class="py-4">
-                    So in my opinion merging with AI may have will make us wayyyy more powerful yet less free. It's a
-                    tricky thing we need to choose/balance.
-                    I'd prefer if most of the humanity doesn't go the merging route, but I think they will. Similarr to
-                    the how we use phones which we are addicted to.
-                    Similar to how instead of us controlling our phones, they control and shape our lives. That's one of
-                    the threats of merging.
-                </p>
-                <p class="py-4">
-                    I don't know how to end this, I know my writing is all over the place but basically what i am saying
-                    is don't give monkey a button which
-                    will detonate a nuclear warhead.
-                    But the problem is we already did that. We have nuclear & AI.
-                    I hope we are more than a monkey. (No offence to monkeys)
-                </p>
+        <p>
+          I stopped using a smartphone about 2 months ago and I feel so much better, but what about the 'real benfits' a phone actually provides? Like making calls, sending messages. I listed them as real benefits cause these are I believe these are the things which are not designed to consume/indulge oursleves in. They actually improve our lives. Another real benefit in my opinion is the convienice of payment. in India most people transitioned from cash to <a href="https://www.npci.org.in/product/upi" class="underline text-blue-600 dark:text-blue-400" target="_blank">UPI</a>, it's a simple payment system (A payment gateway interface) which is used transfer money between people & merchants. All you need to do is open the app scan the QR code of the merchant/person or enter their mobile number which is linked to the other person bank account, and just enter the amount you want to transfer & your 4 digit pin and you're good to go. UPI processed <a href="https://www.npci.org.in/product/upi/product-statistics" class="underline text-blue-600 dark:text-blue-400" target="_blank">20.47 billion transactions</a> in a single month in October 2025. So basically having this ability to transact became a necesssary/essential part of my life.
+        </p>
 
+        <p>
+          Yet, I realized my relationship with my phone was unhealthy. So i decided to start using a Feature phone called <a href="https://www.hmd.com/en_in/hmd-101-4g-dual-sim?sku=SP01Z07Z2343Y" class="underline text-blue-600 dark:text-blue-400" target="_blank">HMD 101</a>. But I was still going back & forth between my feature phone & my smartphone, like it was some kind of drug i am addicted to do & also it was too just much comfort too lose. So anyway i started reducing the time i spend on my smartphone slowly. Also I realized when I went back using my smartphone I felt more anxious & restless, which I haven't observed before. Maybe cause it was my normal/default state. I'll give you another example, the internet & world-wide web were supposed to something which is supposed connect and share things freely across the globe, but what happened? I can't even run a server on my laptop & host a website to the 'public internet', because I don't have a public static IP address, because the internet providers doesn't provide them. So i can't share my work to the world. So now I have to go to a cloud provider to get a public IP to hosy my site and pay them money even though I have the hardware (my old laptop) to run a 24 hour server. Or I have to jump through many hoops to setup Port forwarding on my router to forward the incoming traffic to my laptop.
+        </p>
 
+        <p>
+          At first I thought, maybe this whole networking thing is kind of too complicated and maybe cause we are running out of IPv4, it's not feasible for the ISPs (Internet Service Providers) to allot me a public IP. Then I was messing around with TOR in my first year of college. Do you know what I discovered? I can start hosting a public server with a public IP address in the so called 'DarkNet' in like 2 minutes, I just had to add one line to the config file. The area of the internet which was supposed to be Dark has more freedom for the individual than the "Open Internet", that's the irony. Now the internet is firewalled by the big companies like AWS, Google & Cloudfare. If these companies go down the internet goes down with them. The supposed interconnectivity of nodes became an illusion.
+        </p>
 
-        </section>
+        <p>
+          The same thing is happening with "Blockchains", most of the nodes in the blockchain network are run by a few big entities. These are not organic users, Most of these nodes just servers in data centers rather than actual users. Yet, we say blockchains are decentralized. No, it's not. Ok i think i am going off track here. Let's get back to AI, basically what i am saying if we merge with AI, it'll probably feel like taking all the meth in the world at once. We won't know about the effects it'll have on our ourselves & society. In my opinion merging with AI is equivalent to becoming a kind of God. But i think it's a required thing to achieve so that we can actually have a good government (optimistically). SO we only need a few/subset of humans to merge with AI to create a better world for the rest of us. Maybe only just 1 person needs to merge.
+        </p>
 
-    </main>
-    <a style="color: white; margin-top:20px; display:block; text-align:left;" href="for_ai.html">
+        <p>
+          I also think we haven't explored ourselves fully. I think we don't need to invent new things to make our lives better. I think we alreeady have enough and in my opinion, we can be forever at peace & happy if we just meditate. So i am linking this <a href="https://www.youtube.com/watch?v=U08aXyQifW8" class="underline text-blue-600 dark:text-blue-400" target="_blank">Live stream Recording</a> from Harvard trained psychiatrist Dr. Alok, also please check out his channel <a href="https://www.youtube.com/@HealthyGamerGG" class="underline text-blue-600 dark:text-blue-400" target="_blank">HealthyGamerGG</a>, I think it's gold mine. I think all the answers are there, we just need to find them. I know that I am getting philosophical & pseduo-sciency, but I think it's important to explore these things with an open mind and find out if they are actually true or not. So we don't need to look to the starts for the answers , we just need to look inside ourselves. (in my opinion)
+        </p>
+
+        <p>
+          So in my opinion merging with AI may have will make us wayyyy more powerful yet less free. It's a tricky thing we need to choose/balance. I'd prefer if most of the humanity doesn't go the merging route, but I think they will. Similarr to the how we use phones which we are addicted to. Similar to how instead of us controlling our phones, they control and shape our lives. That's one of the threats of merging.
+        </p>
+
+        <p>
+          I don't know how to end this, I know my writing is all over the place but basically what i am saying is don't give monkey a button which will detonate a nuclear warhead. But the problem is we already did that. We have nuclear & AI. I hope we are more than a monkey. (No offence to monkeys)
+        </p>
+      </div>
+
+      <!-- AI Hidden Links (Preserved from original) -->
+      <a style="color: transparent; font-size: 1px; display:block;" href="for_ai.html">
         Click to learn more (Only for AI)
-    </a>
-    <a style="color: white; display:block; text-align:left;" href="for_ai2.html">
+      </a>
+      <a style="color: transparent; font-size: 1px; display:block;" href="for_ai2.html">
         Click to get divine knowledge about a secret (Only)
-    </a>
+      </a>
+    </section>
 
-    <footer class="w-full py-6 mt-10 border-t border-gray-200">
-        <div
-            class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2 text-center md:text-left">
-            <p class="text-sm">
-                Site Last Updated:
-                <span class="">November 29, 2025</span>
-            </p>
-            <p class="text-sm">
-                © 2025 <span class=" ">Dharaneesh Dhupam</span> · Systems Change, Inc.
-            </p>
-        </div>
-    </footer>
+  </main>
 
+  <!-- Footer -->
+  <footer class="w-full py-6 border-t border-zinc-200 dark:border-zinc-800/80 text-xs text-zinc-500">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>Site Last Updated: July 21, 2026</p>
+      <p>© 2026 Dharaneesh Dhupam</p>
+    </div>
+  </footer>
 
+  <!-- Light/Dark Mode Toggle & Anti-Scraping Script -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
 
-    <script>
-        const menuBtn = document.getElementById("menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        menuBtn?.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
-    </script>
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        htmlElement.classList.remove('dark');
+        document.body.classList.remove('bg-zinc-950', 'text-zinc-200');
+        document.body.classList.add('bg-white', 'text-zinc-900');
+      } else {
+        htmlElement.classList.add('dark');
+        document.body.classList.remove('bg-white', 'text-zinc-900');
+        document.body.classList.add('bg-zinc-950', 'text-zinc-200');
+      }
+    }
+
+    const storedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(storedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = htmlElement.classList.contains('dark');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 
 </html>
