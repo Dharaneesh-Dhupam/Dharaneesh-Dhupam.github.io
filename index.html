@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dharaneesh Dhupam</title>
   <meta name="description" content="Personal site of Dharaneesh Dhupam, software engineer, screenwriter, and founder building Niruddha." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -187,8 +188,8 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1">
         <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
-          <span class="font-medium text-zinc-900 dark:text-zinc-100">Smart WGA Editor</span>
-          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Hollywood-standard formatting with tracked AI co-writer changes.</p>
+          <span class="font-medium text-zinc-900 dark:text-zinc-100">Industry-Standard Screenplay Editor</span>
+          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Industry-standard formatting with tracked AI co-writer changes.</p>
         </div>
         <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
           <span class="font-medium text-zinc-900 dark:text-zinc-100">AI Storyboard Visualizer</span>
@@ -204,9 +205,32 @@
         </div>
       </div>
 
-      <p class="text-xs text-zinc-500 pt-1">
-        <a href="https://www.youtube.com/watch?v=2IaTZEqJVvw" target="_blank" class="underline text-zinc-800 dark:text-zinc-200 hover:text-zinc-500">Watch 1-minute demo video &rarr;</a>
-      </p>
+      <!-- Demo Video Collapsible Dropdown -->
+      <details id="demo-dropdown" class="group pt-2">
+        <summary class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-800 dark:text-zinc-200 hover:text-zinc-500 dark:hover:text-zinc-400 cursor-pointer select-none transition">
+          <span>Watch 1-minute demo video</span>
+          <svg class="w-3.5 h-3.5 transition-transform duration-200 group-open:rotate-180 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+
+        <div class="mt-3 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800/80 bg-black aspect-video max-w-2xl shadow-sm">
+          <iframe
+            id="demo-video-iframe"
+            class="w-full h-full"
+            src=""
+            data-src="https://www.youtube.com/embed/2IaTZEqJVvw?autoplay=1&rel=0"
+            title="Niruddha 1-Minute Product Demo"
+            frameborder="0"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="text-[11px] text-zinc-500 dark:text-zinc-400 pt-1.5">
+          Or open directly on <a href="https://youtu.be/2IaTZEqJVvw" target="_blank" class="underline hover:text-zinc-700 dark:hover:text-zinc-200">YouTube &nearr;</a>
+        </p>
+      </details>
     </section>
 
     <!-- Systems Change Section -->
@@ -255,6 +279,9 @@
       <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Projects</h2>
 
       <ul class="list-disc pl-5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 space-y-3">
+        <li>
+          <a href="https://github.com/ThunderD9/mindflow" class="site-link font-semibold text-zinc-900 dark:text-zinc-100" target="_blank">Mindflow OS</a> (codebase): an offline-first, zero-telemetry desktop personal operating environment (Electron, LevelDB, TypeScript). Features a local Markdown workspace, 7-day visual time-blocker, Eisenhower task matrix, and a private BYOK AI copilot running with no intermediate telemetry servers.
+        </li>
         <li>
           <a href="https://github.com/ThunderD9/seaofus.com" class="site-link font-semibold text-zinc-900 dark:text-zinc-100" target="_blank">SeaofUs</a> (codebase): a full-stack social blogging platform built from scratch to learn HTMX and Django. It integrated local AI models (Llama 3.1 and Flux) for writing assistance and image generation (currently offline).
         </li>
@@ -386,7 +413,7 @@
   <!-- Footer -->
   <footer class="w-full py-6 border-t border-zinc-200 dark:border-zinc-800/80 text-xs text-zinc-500">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-      <p>Site Last Updated: July 21, 2026</p>
+      <p>Site Last Updated: September 13, 2026</p>
       <p>© 2026 Dharaneesh Dhupam</p>
     </div>
   </footer>
@@ -436,6 +463,19 @@
         });
       }
     });
+
+    // Demo video dropdown autoplay & stop
+    const demoDropdown = document.getElementById('demo-dropdown');
+    const demoIframe = document.getElementById('demo-video-iframe');
+    if (demoDropdown && demoIframe) {
+      demoDropdown.addEventListener('toggle', () => {
+        if (demoDropdown.open) {
+          demoIframe.src = demoIframe.getAttribute('data-src');
+        } else {
+          demoIframe.src = '';
+        }
+      });
+    }
   </script>
 </body>
 
