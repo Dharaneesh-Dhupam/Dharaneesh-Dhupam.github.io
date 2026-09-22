@@ -16,18 +16,24 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+            sans: ['Geist', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['Geist Mono', 'JetBrains Mono', 'ui-monospace', 'monospace']
+          },
+          letterSpacing: {
+            tighter: '-0.035em',
+            tight: '-0.02em',
+            normal: '-0.011em',
+            wide: '0.02em',
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Geist & Geist Mono (Paper.design neo-grotesque aesthetic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     html {
@@ -35,7 +41,20 @@
     }
 
     section {
-      scroll-margin-top: 90px;
+      scroll-margin-top: 80px;
+    }
+
+    body {
+      font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      letter-spacing: -0.011em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: -0.024em;
     }
 
     details summary {
@@ -45,59 +64,66 @@
     details summary::-webkit-details-marker {
       display: none;
     }
-
-    body {
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
   </style>
 </head>
 
 <body class="bg-zinc-950 text-zinc-200 dark:bg-zinc-950 dark:text-zinc-200 min-h-screen font-sans antialiased leading-relaxed">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 w-full border-b border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#" class="font-semibold text-sm sm:text-base tracking-tight text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 transition">
+  <!-- Header (Paper.design aesthetic) -->
+  <header class="sticky top-0 z-50 w-full border-b border-black/[0.08] dark:border-white/[0.08] bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md transition-colors">
+    <div class="w-full px-4 sm:px-8 lg:px-12 h-14 flex items-center justify-between">
+      <a href="#" class="font-medium text-[13.5px] sm:text-[14px] tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 hover:opacity-75 transition-opacity shrink-0">
         Dharaneesh Dhupam
       </a>
 
-      <!-- Balanced Desktop Nav -->
-      <nav class="hidden sm:flex items-center gap-5 text-xs font-medium text-zinc-600 dark:text-zinc-400">
-        <a href="#about" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">About</a>
-        <a href="#niruddha" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Niruddha</a>
-        <a href="#systemschange" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Systems Change</a>
-        <a href="#projects" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Projects</a>
-        <a href="#writing" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Writing</a>
-        <a href="#contact" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition">Contact</a>
+      <!-- Desktop Nav (Paper lowercase aesthetic) -->
+      <nav class="hidden sm:flex items-center gap-6 text-[13px] tracking-[-0.01em] lowercase font-normal">
+        <a href="#about" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150">about</a>
+        <a href="#niruddha" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150">niruddha</a>
+        <a href="#systemschange" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150">systems change</a>
+        <a href="#projects" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150">projects</a>
+        <a href="#writing" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150">writing</a>
+        <a href="#contact" class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150">contact</a>
       </nav>
 
-      <!-- Theme Toggle & Mobile Menu -->
-      <div class="flex items-center gap-2">
-        <button id="theme-toggle" aria-label="Toggle light/dark mode" class="p-2 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition">
-          <svg id="sun-icon" class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      <!-- Right Action, Theme Toggle & Mobile Menu -->
+      <div class="flex items-center gap-3">
+        <a href="https://niruddha.ai" target="_blank" class="hidden md:inline-flex items-center gap-1 text-[13px] tracking-[-0.01em] lowercase text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-150 group">
+          <span>niruddha.ai</span>
+          <span class="text-zinc-400 dark:text-zinc-500 group-hover:translate-x-0.5 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-transform duration-150 text-xs">→</span>
+        </a>
+
+        <div class="h-3.5 w-px bg-zinc-200 dark:bg-zinc-800 hidden md:block"></div>
+
+        <button id="theme-toggle" aria-label="Toggle light/dark mode" class="p-1.5 rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+          <svg id="sun-icon" class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
           </svg>
-          <svg id="moon-icon" class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          <svg id="moon-icon" class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
           </svg>
         </button>
 
-        <button id="menu-btn" class="sm:hidden p-2 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100" aria-label="Toggle menu">
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <button id="menu-btn" class="sm:hidden p-1.5 rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle menu">
+          <svg class="w-4 h-4" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <line x1="0" y1="1" x2="16" y2="1"></line>
+            <line x1="0" y1="6" x2="16" y2="6"></line>
+            <line x1="0" y1="11" x2="16" y2="11"></line>
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Nav Drawer -->
-    <div id="mobile-menu" class="hidden sm:hidden border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-4 py-3 text-sm flex flex-col gap-2 font-medium text-zinc-600 dark:text-zinc-400">
-      <a href="#about" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">About</a>
-      <a href="#niruddha" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Niruddha</a>
-      <a href="#systemschange" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Systems Change</a>
-      <a href="#projects" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Projects</a>
-      <a href="#writing" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Writing</a>
-      <a href="#contact" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">Contact</a>
+    <div id="mobile-menu" class="hidden sm:hidden border-b border-black/[0.08] dark:border-white/[0.08] bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md px-4 sm:px-6 py-3 space-y-1 text-[13px] tracking-[-0.01em] lowercase font-normal text-zinc-500 dark:text-zinc-400">
+      <a href="#about" class="block py-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">about</a>
+      <a href="#niruddha" class="block py-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">niruddha</a>
+      <a href="#systemschange" class="block py-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">systems change</a>
+      <a href="#projects" class="block py-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">projects</a>
+      <a href="#writing" class="block py-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">writing</a>
+      <a href="#contact" class="block py-1.5 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">contact</a>
+      <a href="https://niruddha.ai" target="_blank" class="block py-1.5 text-zinc-700 dark:text-zinc-300 font-medium hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors border-t border-black/[0.06] dark:border-white/[0.06] mt-2 pt-2">niruddha.ai →</a>
     </div>
   </header>
 
@@ -130,7 +156,7 @@
       </div>
 
       <!-- Academic Paragraph -->
-      <div class="space-y-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed pt-3 border-t border-zinc-200 dark:border-zinc-800/80">
+      <div class="space-y-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed pt-3 border-t border-black/[0.08] dark:border-white/[0.08]">
         <p>
           A little bit about my academics: I studied Electronics and Communication Engineering at Indian Institute Of Information Technology, Kurnool (2020–2024) and also studied Economics, Sociology, and Public Administration (2022–2025). I was accepted into NYU's MS in Computer Science program for 2026, but turned it down. Taking on debt for a master's didn't make sense when all I want to do is build my own things.
         </p>
@@ -143,7 +169,7 @@
           <span class="group-open:rotate-180 transition-transform duration-200">&darr;</span>
         </summary>
         
-        <div class="mt-4 space-y-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed pl-3 border-l border-zinc-200 dark:border-zinc-800">
+        <div class="mt-4 space-y-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed pl-3 border-l border-black/[0.08] dark:border-white/[0.08]">
           <p>
             Over the years, I saw how systems push people toward certain behaviors. A basic process like buying land turns into a long, confusing experience. That frustration led me to ask: can we build systems people actually trust? <a href="#systemschange" class="underline text-zinc-900 dark:text-zinc-200">Systems Change</a> was my first attempt to answer that, and Niruddha is my attempt to fix the same lack of infrastructure in creative production.
           </p>
@@ -160,81 +186,115 @@
     </section>
 
     <!-- Niruddha Section -->
-    <section id="niruddha" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+    <section id="niruddha" class="space-y-5 pt-8 border-t border-black/[0.08] dark:border-white/[0.08]">
+      
+      <!-- Section Header & Direct Link -->
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2.5">
-          <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">Niruddha</h2>
-          <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-800/80 text-emerald-700 dark:text-emerald-400">Live Beta</span>
-        </div>
-        <a href="https://niruddha.ai" target="_blank" class="text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition">niruddha.ai &rarr;</a>
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Niruddha</h2>
+        <a href="https://niruddha.ai" target="_blank" class="inline-flex items-center gap-1 text-xs font-medium text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors group">
+          <span>niruddha.ai</span>
+          <span class="text-zinc-400 dark:text-zinc-500 group-hover:translate-x-0.5 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-transform duration-150">→</span>
+        </a>
       </div>
 
-      <!-- Origin & Purpose in Niruddha -->
-      <div class="p-3.5 rounded border border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-1.5 text-xs sm:text-sm">
-        <span class="font-semibold text-zinc-900 dark:text-zinc-100">Origin & Purpose</span>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          When I was 17, I tried making a $1,000 feature film with a camera, a mic, and a few friends, but failed because making a movie has always required a studio (hundreds of thousands of dollars, dozens of people, and months of coordination indie creators can't afford). I built Niruddha to create the pre-production tools I couldn't afford back then.
+      <!-- Core Hook: One-liner then what it is -->
+      <div class="space-y-1.5">
+        <p class="text-base sm:text-lg font-medium tracking-tight text-zinc-900 dark:text-zinc-100">
+          Niruddha is the interface for AI cinema.
+        </p>
+        <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          A browser-based screenplay editor that treats the script as the source code for the entire film, providing industry-standard script formatting while automatically compiling scene text into visual storyboards, video scenes, and production breakdowns using AI.
         </p>
       </div>
 
-      <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        NIRUDDHA is a professional, AI-powered screenplay writing and pre-production platform: a unified workspace that bridges the gap between formatting the script and generating visual pre-vis entirely in the browser.
-      </p>
-
-      <div class="text-xs text-zinc-600 dark:text-zinc-400 flex items-start gap-2 pt-1">
-        <span class="font-semibold text-zinc-900 dark:text-zinc-200 shrink-0">Validation:</span>
-        <span>Testing with active screenwriters and producers, including an ex-Sony Pictures scriptwriter currently developing a feature horror concept on the platform.</span>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1">
-        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
-          <span class="font-medium text-zinc-900 dark:text-zinc-100">Industry-Standard Screenplay Editor</span>
-          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Industry-standard formatting with tracked AI co-writer changes.</p>
-        </div>
-        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
-          <span class="font-medium text-zinc-900 dark:text-zinc-100">AI Storyboard Visualizer</span>
-          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Generates multi-frame shot breakdowns from scene text.</p>
-        </div>
-        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
-          <span class="font-medium text-zinc-900 dark:text-zinc-100">AI Video Scenes</span>
-          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Renders page-by-page video scenes from screenplay context.</p>
-        </div>
-        <div class="p-2.5 rounded border border-zinc-200 dark:border-zinc-800/60">
-          <span class="font-medium text-zinc-900 dark:text-zinc-100">Production Breakdowns</span>
-          <p class="text-zinc-500 dark:text-zinc-400 text-[11px] mt-0.5">Auto-tags cast, props, costumes, and VFX directly from scenes.</p>
-        </div>
-      </div>
-
-      <!-- Demo Video Collapsible Dropdown -->
-      <details id="demo-dropdown" class="group pt-2">
-        <summary class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-800 dark:text-zinc-200 hover:text-zinc-500 dark:hover:text-zinc-400 cursor-pointer select-none transition">
-          <span>Watch 1-minute demo video</span>
-          <svg class="w-3.5 h-3.5 transition-transform duration-200 group-open:rotate-180 text-zinc-500 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      <!-- Origin & Purpose (Founder Note) -->
+      <div class="rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/50 dark:bg-zinc-900/30 p-4 sm:p-5 space-y-2">
+        <div class="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+          <svg class="w-3.5 h-3.5 text-zinc-400 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
           </svg>
-        </summary>
-
-        <div class="mt-3 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800/80 bg-black aspect-video max-w-2xl shadow-sm">
-          <iframe
-            id="demo-video-iframe"
-            class="w-full h-full"
-            src=""
-            data-src="https://www.youtube.com/embed/2IaTZEqJVvw?autoplay=1&rel=0"
-            title="Niruddha 1-Minute Product Demo"
-            frameborder="0"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+          <span>Origin &amp; Purpose</span>
         </div>
-        <p class="text-[11px] text-zinc-500 dark:text-zinc-400 pt-1.5">
-          Or open directly on <a href="https://youtu.be/2IaTZEqJVvw" target="_blank" class="underline hover:text-zinc-700 dark:hover:text-zinc-200">YouTube &nearr;</a>
+        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          When I was 17, I tried making a $1,000 feature film with a camera, a mic, and a few friends. It failed because making a movie has always required a studio: hundreds of thousands of dollars, dozens of people, and months of coordination that indie creators cannot afford. Legacy editors think the job ends when text is formatted on the page. I built Niruddha to make sure next-gen storytellers can visualize and tell their stories irrespective of their resources.
         </p>
-      </details>
+      </div>
+
+      <!-- Feature Grid (Paper Bento Style) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">Industry-Standard Screenplay Editor</span>
+            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">01</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            Real-time script formatting with scene parsing and an AI co-writer that proposes edits as inline tracked diffs.
+          </p>
+        </div>
+
+        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">AI Storyboard Visualizer</span>
+            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">02</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            Generates multi-frame cinematic shot breakdowns, camera angles, and character continuity directly from scene text.
+          </p>
+        </div>
+
+        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">AI Video Scenes</span>
+            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">03</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            Compiles screenplay text into page-by-page generative video shots and visual motion directly in the browser.
+          </p>
+        </div>
+
+        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">Production Breakdowns</span>
+            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">04</span>
+          </div>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            Automatically tags cast, props, costumes, locations, and VFX directly from scenes, replacing weeks of manual prep work.
+          </p>
+        </div>
+      </div>
+
+      <!-- Demo Video (Studio Viewport Card) -->
+      <div class="pt-2">
+        <div class="rounded-xl overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-black">
+          <div class="flex items-center justify-between px-3.5 py-2 border-b border-white/[0.08] bg-zinc-900/60 text-[11px] font-mono text-zinc-400">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+              <span class="w-2 h-2 rounded-full bg-amber-500/80"></span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span>
+              <span class="ml-1.5 font-sans font-medium text-zinc-200">1-Minute Product Demo</span>
+            </div>
+            <a href="https://youtu.be/2IaTZEqJVvw" target="_blank" class="hover:text-zinc-200 transition-colors flex items-center gap-1 font-sans">
+              <span>Open on YouTube</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+          <div class="aspect-video w-full bg-zinc-950">
+            <iframe
+              id="demo-video-iframe"
+              class="w-full h-full"
+              src="https://www.youtube-nocookie.com/embed/2IaTZEqJVvw?rel=0"
+              title="Niruddha 1-Minute Product Demo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Systems Change Section -->
-    <section id="systemschange" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+    <section id="systemschange" class="space-y-4 pt-6 border-t border-black/[0.08] dark:border-white/[0.08]">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
           <h2 class="text-lg font-bold text-zinc-900 dark:text-zinc-100">Systems Change, Inc.</h2>
@@ -275,15 +335,23 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+    <section id="projects" class="space-y-4 pt-6 border-t border-black/[0.08] dark:border-white/[0.08]">
       <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Projects</h2>
 
       <ul class="list-disc pl-5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 space-y-3">
         <li>
-          <a href="https://github.com/ThunderD9/mindflow" class="site-link font-semibold text-zinc-900 dark:text-zinc-100" target="_blank">Mindflow OS</a> (codebase): an offline-first, zero-telemetry desktop personal operating environment (Electron, LevelDB, TypeScript). Features a local Markdown workspace, 7-day visual time-blocker, Eisenhower task matrix, and a private BYOK AI copilot running with no intermediate telemetry servers.
+          <a href="https://github.com/ThunderD9/mindflow" target="_blank" class="underline underline-offset-4 font-semibold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition">Mindflow OS</a> (<a href="https://github.com/ThunderD9/mindflow" target="_blank" class="underline underline-offset-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition">codebase</a>): an offline-first, zero-telemetry desktop personal operating environment (Electron, LevelDB, TypeScript). Features a local Markdown workspace, 7-day visual time-blocker, Eisenhower task matrix, and a private BYOK AI copilot running with no intermediate telemetry servers.
+          <div class="mt-1">
+            <span class="text-zinc-500 dark:text-zinc-400 font-mono text-xs">GitHub: </span>
+            <a href="https://github.com/ThunderD9/mindflow" target="_blank" class="font-mono text-xs text-blue-600 dark:text-blue-400 underline hover:opacity-80 break-all">https://github.com/ThunderD9/mindflow</a>
+          </div>
         </li>
         <li>
-          <a href="https://github.com/ThunderD9/seaofus.com" class="site-link font-semibold text-zinc-900 dark:text-zinc-100" target="_blank">SeaofUs</a> (codebase): a full-stack social blogging platform built from scratch to learn HTMX and Django. It integrated local AI models (Llama 3.1 and Flux) for writing assistance and image generation (currently offline).
+          <a href="https://github.com/ThunderD9/seaofus.com" target="_blank" class="underline underline-offset-4 font-semibold text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400 transition">SeaofUs</a> (<a href="https://github.com/ThunderD9/seaofus.com" target="_blank" class="underline underline-offset-2 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition">codebase</a>): a full-stack social blogging platform built from scratch to learn HTMX and Django. It integrated local AI models (Llama 3.1 and Flux) for writing assistance and image generation (currently offline).
+          <div class="mt-1">
+            <span class="text-zinc-500 dark:text-zinc-400 font-mono text-xs">GitHub: </span>
+            <a href="https://github.com/ThunderD9/seaofus.com" target="_blank" class="font-mono text-xs text-blue-600 dark:text-blue-400 underline hover:opacity-80 break-all">https://github.com/ThunderD9/seaofus.com</a>
+          </div>
         </li>
         <li>
           Automated government data entry using pandas and Selenium, turning a 4-week manual survey data entry job for my mother's welfare office into a 4-day automated script run.
@@ -292,7 +360,7 @@
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+    <section id="research" class="space-y-4 pt-6 border-t border-black/[0.08] dark:border-white/[0.08]">
       <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Research & Publications</h2>
 
       <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
@@ -336,7 +404,7 @@
     </section>
 
     <!-- Writing Section -->
-    <section id="writing" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+    <section id="writing" class="space-y-4 pt-6 border-t border-black/[0.08] dark:border-white/[0.08]">
       <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Writing</h2>
 
       <p class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
@@ -381,7 +449,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="space-y-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80">
+    <section id="contact" class="space-y-4 pt-6 border-t border-black/[0.08] dark:border-white/[0.08]">
       <h2 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">Contact</h2>
 
       <div class="space-y-3 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
@@ -411,7 +479,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="w-full py-6 border-t border-zinc-200 dark:border-zinc-800/80 text-xs text-zinc-500">
+  <footer class="w-full py-6 border-t border-black/[0.08] dark:border-white/[0.08] text-xs text-zinc-500">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
       <p>Site Last Updated: September 13, 2026</p>
       <p>© 2026 Dharaneesh Dhupam</p>
@@ -450,6 +518,11 @@
     menuBtn?.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
 
     document.querySelectorAll('.email-link').forEach(link => {
       const user = link.getAttribute('data-user');
@@ -464,18 +537,6 @@
       }
     });
 
-    // Demo video dropdown autoplay & stop
-    const demoDropdown = document.getElementById('demo-dropdown');
-    const demoIframe = document.getElementById('demo-video-iframe');
-    if (demoDropdown && demoIframe) {
-      demoDropdown.addEventListener('toggle', () => {
-        if (demoDropdown.open) {
-          demoIframe.src = demoIframe.getAttribute('data-src');
-        } else {
-          demoIframe.src = '';
-        }
-      });
-    }
   </script>
 </body>
 
