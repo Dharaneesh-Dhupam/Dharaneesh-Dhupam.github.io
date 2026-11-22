@@ -64,6 +64,104 @@
     details summary::-webkit-details-marker {
       display: none;
     }
+
+    .project-gallery {
+      width: min(60rem, calc(100vw - 3rem));
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 767px) {
+      .project-gallery {
+        width: 100%;
+      }
+    }
+
+    .project-gallery-stage {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #71717a40;
+      border-radius: 0.85rem;
+      background: #101012;
+    }
+
+    .project-gallery-track {
+      display: flex;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .project-gallery-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .project-gallery-track img {
+      flex: 0 0 100%;
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      scroll-snap-align: start;
+    }
+
+    .project-gallery-arrow {
+      position: absolute;
+      top: 50%;
+      display: grid;
+      place-items: center;
+      width: 1.75rem;
+      aspect-ratio: 1;
+      transform: translateY(-50%);
+      border: 1px solid #ffffff66;
+      border-radius: 50%;
+      background: #18181b80;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 18px #0006, inset 0 1px 0 #ffffff33;
+      color: white;
+      cursor: pointer;
+    }
+
+    .project-gallery-arrow[hidden] {
+      display: none;
+    }
+
+    .project-gallery-arrow:hover,
+    .project-gallery-arrow:focus-visible {
+      background: #27272bd9;
+    }
+
+    .project-gallery-arrow[data-gallery-prev] {
+      left: clamp(0.4rem, 1.4vw, 0.9rem);
+    }
+
+    .project-gallery-arrow[data-gallery-next] {
+      right: clamp(0.4rem, 1.4vw, 0.9rem);
+    }
+
+    .project-gallery-arrow svg {
+      width: 0.75rem;
+    }
+
+    .project-gallery-track:focus-visible {
+      outline: 2px solid #93c5fd;
+      outline-offset: -3px;
+    }
+
+    .project-gallery-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 0.45rem;
+    }
+
+    .project-gallery-controls[hidden] {
+      display: none;
+    }
   </style>
 </head>
 
@@ -207,6 +305,63 @@
         </p>
       </div>
 
+      <div class="project-gallery scroll-mt-20" id="niruddha-gallery" data-autoplay role="region" aria-roledescription="carousel" aria-label="Niruddha screenshots">
+        <div class="project-gallery-stage">
+          <div class="project-gallery-track" id="niruddha-gallery-track" tabindex="0" role="group" aria-label="Screenshots">
+            <img src="Niruddha/Hompage%201.png" alt="Niruddha homepage" width="1920" height="1080" decoding="async">
+            <img src="Niruddha/Library%20Page.png" alt="Screenplay library" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/Library%20Page%20Create%20Modal.png" alt="Create a screenplay dialog" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/Hompage%203%20without%20top%20nav.png" alt="Niruddha homepage product overview" width="1776" height="1012" loading="lazy" decoding="async">
+            <img src="Niruddha/ai-inline-example.png" alt="Inline AI edits in the screenplay editor" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/Hompage%202%20alternate%20-%20use%20this%20.png" alt="Niruddha homepage feature showcase" width="1890" height="945" loading="lazy" decoding="async">
+            <img src="Niruddha/visuliser.png" alt="Storyboard Visualizer" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/video%20pipeline.png" alt="Video Pipeline" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/charcters.png" alt="Character workspace" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/Single%20character.png" alt="Individual character profile" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/Beatboard.png" alt="Beat Board" width="1920" height="1080" loading="lazy" decoding="async">
+            <img src="Niruddha/ai-composer%20solo.png" alt="Standalone AI composer" width="1920" height="1080" loading="lazy" decoding="async">
+          </div>
+          <button type="button" class="project-gallery-arrow" data-gallery-prev aria-label="Previous screenshot" aria-controls="niruddha-gallery-track" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button type="button" class="project-gallery-arrow" data-gallery-next aria-label="Next screenshot" aria-controls="niruddha-gallery-track" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="project-gallery-controls text-sm text-zinc-600 dark:text-zinc-300" hidden>
+          <p data-gallery-caption aria-live="off" aria-atomic="true"></p>
+          <button type="button" class="shrink-0 rounded-md border border-zinc-300 px-3 py-2 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" data-gallery-toggle aria-controls="niruddha-gallery-track"></button>
+        </div>
+      </div>
+
+      <!-- Demo Video (Studio Viewport Card) -->
+      <div class="pt-2">
+        <div class="rounded-xl overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-black">
+          <div class="flex items-center justify-between px-3.5 py-2 border-b border-white/[0.08] bg-zinc-900/60 text-[11px] font-mono text-zinc-400">
+            <span class="font-sans font-medium text-zinc-200">1-Minute Product Demo</span>
+            <a href="https://youtu.be/2IaTZEqJVvw" target="_blank" class="hover:text-zinc-200 transition-colors flex items-center gap-1 font-sans">
+              <span>Open on YouTube</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+          <p class="border-b border-white/[0.08] bg-zinc-900/60 px-3.5 py-2 text-sm text-zinc-400">
+            We’ve made significant changes to Niruddha since this video was published on <strong class="font-semibold text-zinc-200"><time datetime="2026-06-30">Jun 30, 2026</time></strong>. See the <a href="#niruddha-gallery" class="text-zinc-200 underline underline-offset-2 hover:text-white">updated screenshots above</a> for the latest interface.
+          </p>
+          <div class="aspect-video w-full bg-zinc-950">
+            <iframe
+              id="demo-video-iframe"
+              loading="lazy"
+              class="w-full h-full"
+              src="https://www.youtube-nocookie.com/embed/2IaTZEqJVvw?rel=0"
+              title="Niruddha 1-Minute Product Demo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
       <!-- Origin & Purpose (Founder Note) -->
       <div class="rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/50 dark:bg-zinc-900/30 p-4 sm:p-5 space-y-2">
         <div class="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
@@ -263,34 +418,6 @@
         </div>
       </div>
 
-      <!-- Demo Video (Studio Viewport Card) -->
-      <div class="pt-2">
-        <div class="rounded-xl overflow-hidden border border-black/[0.08] dark:border-white/[0.08] bg-black">
-          <div class="flex items-center justify-between px-3.5 py-2 border-b border-white/[0.08] bg-zinc-900/60 text-[11px] font-mono text-zinc-400">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
-              <span class="w-2 h-2 rounded-full bg-amber-500/80"></span>
-              <span class="w-2 h-2 rounded-full bg-emerald-500/80"></span>
-              <span class="ml-1.5 font-sans font-medium text-zinc-200">1-Minute Product Demo</span>
-            </div>
-            <a href="https://youtu.be/2IaTZEqJVvw" target="_blank" class="hover:text-zinc-200 transition-colors flex items-center gap-1 font-sans">
-              <span>Open on YouTube</span>
-              <span>&nearr;</span>
-            </a>
-          </div>
-          <div class="aspect-video w-full bg-zinc-950">
-            <iframe
-              id="demo-video-iframe"
-              class="w-full h-full"
-              src="https://www.youtube-nocookie.com/embed/2IaTZEqJVvw?rel=0"
-              title="Niruddha 1-Minute Product Demo"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Systems Change Section -->
@@ -323,6 +450,53 @@
           <p class="text-zinc-600 dark:text-zinc-400 mt-1 leading-relaxed">
             I later pivoted from the government cryptography registry to building a consumer-facing 11-step real estate transaction engine at <span class="font-mono text-xs text-zinc-400">sysc.land</span> (currently offline). Our platform made finding, buying, and selling property straightforward: handling ESIGN-compliant contracts, earnest money deposits, parallel due diligence, authority oversight, and automated deed filings directly for buyers and sellers.
           </p>
+        </div>
+
+        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          These screenshots are from the consumer platform I built after the pivot away from the decentralized land records registry. They walk through listing a property and closing a sale, with Balu as the seller and me (DD) as the buyer.
+        </p>
+
+        <div class="project-gallery" id="sysc-gallery" role="region" aria-roledescription="carousel" aria-label="Systems Change transaction walkthrough">
+          <div class="project-gallery-stage">
+            <div class="project-gallery-track" id="sysc-gallery-track" tabindex="0" role="group" aria-label="Systems Change screenshots">
+              <img src="NEW%20SYSC/Homepage.png" alt="Systems Change homepage" width="1920" height="1076" loading="lazy" decoding="async" data-caption="The homepage introduces the marketplace and shows how buyers and sellers can track a property purchase.">
+              <img src="NEW%20SYSC/login.png" alt="Systems Change sign-in screen" width="1920" height="1075" loading="lazy" decoding="async" data-caption="Buyers, sellers, and authority users sign in to the same platform.">
+              <img src="NEW%20SYSC/balu%20dashboard.png" alt="Balu’s seller dashboard" width="1920" height="1080" loading="lazy" decoding="async" data-caption="Balu’s dashboard shows his listings, active deals, recent activity, and anything that needs his attention.">
+              <img src="NEW%20SYSC/create%20listing%201st%20page.png" alt="Listing form for property location" width="1920" height="1076" loading="lazy" decoding="async" data-caption="The seller starts a listing with the property address, county, and assessor’s parcel number.">
+              <img src="NEW%20SYSC/create%20listing%202nd%20page.png" alt="Listing form for property details" width="1920" height="1080" loading="lazy" decoding="async" data-caption="The seller adds the property type, room counts, and lot size.">
+              <img src="NEW%20SYSC/create%20listing%203rd%20page.png" alt="Listing form for supporting documents" width="1920" height="1077" loading="lazy" decoding="async" data-caption="The seller uploads supporting documents such as the deed, tax records, and title report.">
+              <img src="NEW%20SYSC/create%20listing%204th%20page%20signature%20page.png" alt="Listing agreement signature screen" width="1920" height="1075" loading="lazy" decoding="async" data-caption="The seller signs the listing agreement before submitting the property for authority review.">
+              <img src="NEW%20SYSC/Balu%20my%20places.png" alt="Balu’s My Places page" width="1920" height="1080" loading="lazy" decoding="async" data-caption="In My Places, Balu can manage his listings and see the offers on each property.">
+              <img src="NEW%20SYSC/6%20steps.png" alt="Public overview of six real estate milestones" width="1912" height="877" loading="lazy" decoding="async" data-caption="The public overview summarizes the process in six milestones, from browsing listings to transferring the deed.">
+              <img src="NEW%20SYSC/buy%20places.png" alt="Buy Places marketplace" width="1920" height="1077" loading="lazy" decoding="async" data-caption="Buyers use Buy Places to browse and filter available properties.">
+              <img src="NEW%20SYSC/by%20page.png" alt="Property detail and offer form" width="1920" height="1080" loading="lazy" decoding="async" data-caption="A property page brings together photos, listing details, and the form for making an offer.">
+              <img src="NEW%20SYSC/LOI%20intenet%20modal.png" alt="Letter of Intent signature dialog" width="1920" height="1080" loading="lazy" decoding="async" data-caption="I sign a Letter of Intent to submit my offer to Balu.">
+              <img src="NEW%20SYSC/counter%20offer%20inbox%20clean.png" alt="Buyer’s offer in Balu’s inbox" width="1920" height="1077" loading="lazy" decoding="async" data-caption="My offer appears in Balu’s inbox, where he can accept, decline, or counter it.">
+              <img src="NEW%20SYSC/balu%20countered.png" alt="Balu’s counteroffer to DD" width="1920" height="1076" loading="lazy" decoding="async" data-caption="Balu sends me a counteroffer with his proposed price.">
+              <img src="NEW%20SYSC/dd%20counter%20received.png" alt="Balu’s counteroffer in DD’s inbox" width="1920" height="1075" loading="lazy" decoding="async" data-caption="I receive Balu’s counteroffer in the same conversation and review the new price.">
+              <img src="NEW%20SYSC/offer%20accepted%20and%20visit%20request.png" alt="Accepted offer and property visit request" width="1920" height="1080" loading="lazy" decoding="async" data-caption="I accept Balu’s counteroffer and request a property visit. Balu sees the request in his inbox.">
+              <img src="NEW%20SYSC/dd%20Agrrement%20signing.png" alt="DD signs the price agreement" width="1920" height="1080" loading="lazy" decoding="async" data-caption="Both parties sign the price agreement. This is what the signature step looks like from my account.">
+              <img src="NEW%20SYSC/Pay%20emd.png" alt="Earnest money deposit payment screen" width="1920" height="1072" loading="lazy" decoding="async" data-caption="I pay the earnest money deposit from my transaction dashboard.">
+              <img src="NEW%20SYSC/inspection%20pending.png" alt="Title search and inspection pending" width="1917" height="1080" loading="lazy" decoding="async" data-caption="After the deposit, the transaction moves into two parallel tracks for the title search and property inspection.">
+              <img src="NEW%20SYSC/authorityy%20inspection.png" alt="Authority transaction management dashboard" width="1912" height="1078" loading="lazy" decoding="async" data-caption="From the authority dashboard, our team can track the deal and see what is pending.">
+              <img src="NEW%20SYSC/authority%20scrolled.png" alt="Inspection report controls on the authority dashboard" width="1916" height="1080" loading="lazy" decoding="async" data-caption="Further down the same dashboard, the authority uploads the inspection report and advances the deal to the buyer’s decision.">
+              <img src="NEW%20SYSC/dd%20inspection%20done.png" alt="DD reviews the completed title search and inspection" width="1920" height="1080" loading="lazy" decoding="async" data-caption="I review the title search and inspection report. I can approve the findings or request repairs and negotiate over any damage.">
+              <img src="NEW%20SYSC/Activity%20Timeline.png" alt="Immutable transaction activity timeline" width="1920" height="1080" loading="lazy" decoding="async" data-caption="The immutable activity timeline records key events and decisions throughout the transaction.">
+              <img src="NEW%20SYSC/Final%20payment.png" alt="Final payment breakdown" width="1920" height="1080" loading="lazy" decoding="async" data-caption="I approve the inspection findings and move on to the final payment, with the deposit reflected in the breakdown.">
+              <img src="NEW%20SYSC/paument%20snet.png" alt="Payment confirmed and deed recording pending" width="1920" height="1080" loading="lazy" decoding="async" data-caption="Once payment is confirmed, the transaction moves to deed recording.">
+              <img src="NEW%20SYSC/done.png" alt="Completed transaction in DD’s dashboard" width="1920" height="1075" loading="lazy" decoding="async" data-caption="My dashboard marks the sale complete and keeps the transaction summary and documents together.">
+            </div>
+            <button type="button" class="project-gallery-arrow" data-gallery-prev aria-label="Previous screenshot" aria-controls="sysc-gallery-track" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="project-gallery-arrow" data-gallery-next aria-label="Next screenshot" aria-controls="sysc-gallery-track" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+          <div class="project-gallery-controls text-sm text-zinc-600 dark:text-zinc-300" hidden>
+            <p data-gallery-caption aria-live="off" aria-atomic="true"></p>
+            <button type="button" class="shrink-0 rounded-md border border-zinc-300 px-3 py-2 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" data-gallery-toggle aria-controls="sysc-gallery-track"></button>
+          </div>
         </div>
 
         <div>
@@ -485,6 +659,113 @@
       <p>© 2026 Dharaneesh Dhupam</p>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.project-gallery').forEach((gallery) => {
+      const stage = gallery.querySelector('.project-gallery-stage');
+      const track = gallery.querySelector('.project-gallery-track');
+      const slides = [...track.querySelectorAll('img')];
+      const controls = gallery.querySelector('.project-gallery-controls');
+      const caption = gallery.querySelector('[data-gallery-caption]');
+      const previous = gallery.querySelector('[data-gallery-prev]');
+      const next = gallery.querySelector('[data-gallery-next]');
+      const toggle = gallery.querySelector('[data-gallery-toggle]');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const slideDuration = 6000;
+
+      let autoplay = gallery.hasAttribute('data-autoplay') && !reducedMotion.matches;
+      let inView = false;
+      let hovering = false;
+      let navigationFocused = false;
+      let timer;
+      let currentIndex = -1;
+
+      function updateCaption() {
+        const index = Math.round(track.scrollLeft / track.clientWidth);
+        if (!slides[index] || index === currentIndex) return;
+
+        slides[currentIndex]?.setAttribute('aria-hidden', 'true');
+        slides[index].removeAttribute('aria-hidden');
+        currentIndex = index;
+        const slide = slides[index];
+        caption.textContent = `${index + 1} / ${slides.length} · ${slide.dataset.caption || slide.alt}`;
+      }
+
+      function move(direction) {
+        const destination = currentIndex + direction;
+        const index = (destination + slides.length) % slides.length;
+        track.scrollTo({
+          left: index * track.clientWidth,
+          behavior: reducedMotion.matches || destination !== index ? 'instant' : 'smooth',
+        });
+        scheduleAdvance();
+      }
+
+      function scheduleAdvance() {
+        window.clearTimeout(timer);
+        const playing = autoplay && inView && !hovering && !navigationFocused && !document.hidden;
+        caption.setAttribute('aria-live', playing ? 'off' : 'polite');
+        if (playing) timer = window.setTimeout(() => move(1), slideDuration);
+      }
+
+      function setAutoplay(enabled) {
+        autoplay = enabled;
+        toggle.textContent = enabled ? 'Pause slideshow' : 'Play slideshow';
+        scheduleAdvance();
+      }
+
+      previous.addEventListener('click', () => move(-1));
+      next.addEventListener('click', () => move(1));
+      toggle.addEventListener('click', () => setAutoplay(!autoplay));
+
+      gallery.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        move(event.key === 'ArrowRight' ? 1 : -1);
+      });
+
+      track.addEventListener('scroll', () => {
+        updateCaption();
+        scheduleAdvance();
+      }, { passive: true });
+
+      stage.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'mouse') return;
+        hovering = true;
+        scheduleAdvance();
+      });
+      stage.addEventListener('pointerleave', () => {
+        hovering = false;
+        scheduleAdvance();
+      });
+
+      gallery.addEventListener('focusin', (event) => {
+        navigationFocused = event.target !== toggle;
+        scheduleAdvance();
+      });
+      gallery.addEventListener('focusout', (event) => {
+        if (gallery.contains(event.relatedTarget)) return;
+        navigationFocused = false;
+        scheduleAdvance();
+      });
+
+      new IntersectionObserver(([entry]) => {
+        inView = entry.intersectionRatio >= 0.5;
+        scheduleAdvance();
+      }, { threshold: 0.5 }).observe(stage);
+      document.addEventListener('visibilitychange', scheduleAdvance);
+      reducedMotion.addEventListener('change', (event) => {
+        if (event.matches) setAutoplay(false);
+      });
+
+      slides.forEach((slide) => slide.setAttribute('aria-hidden', 'true'));
+      updateCaption();
+      setAutoplay(autoplay);
+      previous.hidden = false;
+      next.hidden = false;
+      controls.hidden = false;
+    });
+  </script>
 
   <!-- Light/Dark Mode Toggle & Anti-Scraping Script -->
   <script>
