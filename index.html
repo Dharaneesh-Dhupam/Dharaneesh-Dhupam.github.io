@@ -162,6 +162,78 @@
     .project-gallery-controls[hidden] {
       display: none;
     }
+
+    .niruddha-flow {
+      --flow-line: #d4d4d8;
+      --flow-branch-width: 1.25rem;
+      display: grid;
+      row-gap: 0.5rem;
+    }
+
+    .dark .niruddha-flow {
+      --flow-line: #3f3f46;
+    }
+
+    .niruddha-flow-branches {
+      margin-inline-start: 0.25rem;
+    }
+
+    .niruddha-flow-branches li {
+      position: relative;
+      padding: 0.5rem 0 0.5rem var(--flow-branch-width);
+    }
+
+    .niruddha-flow-branches li::before,
+    .niruddha-flow-branches li::after {
+      position: absolute;
+      left: 0;
+      content: '';
+    }
+
+    .niruddha-flow-branches li::before {
+      top: 50%;
+      width: calc(var(--flow-branch-width) - 0.5rem);
+      border-top: 1px solid var(--flow-line);
+    }
+
+    .niruddha-flow-branches li::after {
+      inset-block: 0;
+      border-left: 1px solid var(--flow-line);
+    }
+
+    .niruddha-flow-branches li:last-child::after {
+      bottom: 50%;
+    }
+
+    @media (min-width: 640px) {
+      .niruddha-flow {
+        --flow-branch-width: 1.75rem;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+        align-items: center;
+      }
+
+      .niruddha-flow-source {
+        position: relative;
+        padding-right: calc(var(--flow-branch-width) + 0.75rem);
+      }
+
+      .niruddha-flow-source::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: var(--flow-branch-width);
+        border-top: 1px solid var(--flow-line);
+        content: '';
+      }
+
+      .niruddha-flow-branches {
+        margin-inline-start: 0;
+      }
+
+      .niruddha-flow-branches li:first-child::after {
+        top: 50%;
+      }
+    }
   </style>
 </head>
 
@@ -375,47 +447,36 @@
         </p>
       </div>
 
-      <!-- Feature Grid (Paper Bento Style) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">Industry-Standard Screenplay Editor</span>
-            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">01</span>
-          </div>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-            Real-time script formatting with scene parsing and an AI co-writer that proposes edits as inline tracked diffs.
+      <!-- Screenplay Workflow -->
+      <div class="niruddha-flow py-3 text-sm text-zinc-600 dark:text-zinc-400">
+        <div class="niruddha-flow-source">
+          <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Screenplay</h3>
+          <p class="mt-1">
+            Write and revise your scenes in industry-standard screenplay format.
           </p>
         </div>
-
-        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">AI Storyboard Visualizer</span>
-            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">02</span>
-          </div>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-            Generates multi-frame cinematic shot breakdowns, camera angles, and character continuity directly from scene text.
-          </p>
-        </div>
-
-        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">AI Video Scenes</span>
-            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">03</span>
-          </div>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-            Compiles screenplay text into page-by-page generative video shots and visual motion directly in the browser.
-          </p>
-        </div>
-
-        <div class="p-3.5 sm:p-4 rounded-xl border border-black/[0.08] dark:border-white/[0.08] bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-black/20 dark:hover:border-white/20 transition-all duration-150">
-          <div class="flex items-center justify-between mb-1">
-            <span class="text-[13px] font-semibold text-zinc-900 dark:text-zinc-100">Production Breakdowns</span>
-            <span class="text-[10px] font-mono text-zinc-400 dark:text-zinc-500">04</span>
-          </div>
-          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-            Automatically tags cast, props, costumes, locations, and VFX directly from scenes, replacing weeks of manual prep work.
-          </p>
-        </div>
+        <ul class="niruddha-flow-branches" role="list" aria-label="Niruddha tools connected to the screenplay">
+          <li>
+            <h4 class="font-semibold text-zinc-900 dark:text-zinc-100">Storyboard</h4>
+            <p>Generate shot sequences from scene text with consistent characters.</p>
+          </li>
+          <li>
+            <h4 class="font-semibold text-zinc-900 dark:text-zinc-100">Video</h4>
+            <p>Generate video shots from screenplay pages.</p>
+          </li>
+          <li>
+            <h4 class="font-semibold text-zinc-900 dark:text-zinc-100">AI Inline Editing</h4>
+            <p>Review suggested edits from the AI co-writer directly in the script.</p>
+          </li>
+          <li>
+            <h4 class="font-semibold text-zinc-900 dark:text-zinc-100">Production Breakdown</h4>
+            <p>Automatically tag cast, props, costumes, locations, and VFX from scenes.</p>
+          </li>
+          <li>
+            <h4 class="font-semibold text-zinc-900 dark:text-zinc-100">Beat Board</h4>
+            <p>Map story beats and connect ideas on a visual canvas.</p>
+          </li>
+        </ul>
       </div>
 
     </section>
